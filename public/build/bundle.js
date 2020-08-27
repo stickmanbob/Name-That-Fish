@@ -811,7 +811,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "SWAB THE DECK!";
-    			attr_dev(h1, "class", "wrong svelte-9o9757");
+    			attr_dev(h1, "class", "wrong svelte-k5qyh4");
     			add_location(h1, file$2, 7, 4, 153);
     		},
     		m: function mount(target, anchor) {
@@ -841,7 +841,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "GREAT JOB, MATEY!";
-    			attr_dev(h1, "class", "right svelte-9o9757");
+    			attr_dev(h1, "class", "right svelte-k5qyh4");
     			add_location(h1, file$2, 5, 4, 74);
     		},
     		m: function mount(target, anchor) {
@@ -1255,15 +1255,15 @@ var app = (function () {
     			t5 = text("Wrong answers left: ");
     			span2 = element("span");
     			t6 = text(/*numAttempts*/ ctx[0]);
-    			attr_dev(span0, "class", "questions svelte-1kvvws1");
+    			attr_dev(span0, "class", "questions svelte-g0yxzt");
     			add_location(span0, file$4, 7, 34, 149);
-    			attr_dev(span1, "class", "field svelte-1kvvws1");
+    			attr_dev(span1, "class", "field svelte-g0yxzt");
     			add_location(span1, file$4, 7, 4, 119);
-    			attr_dev(span2, "class", "attempts svelte-1kvvws1");
+    			attr_dev(span2, "class", "attempts svelte-g0yxzt");
     			add_location(span2, file$4, 8, 44, 268);
-    			attr_dev(span3, "class", "field svelte-1kvvws1");
+    			attr_dev(span3, "class", "field svelte-g0yxzt");
     			add_location(span3, file$4, 8, 4, 228);
-    			attr_dev(div, "class", "svelte-1kvvws1");
+    			attr_dev(div, "class", "svelte-g0yxzt");
     			add_location(div, file$4, 6, 0, 109);
     		},
     		l: function claim(nodes) {
@@ -1431,7 +1431,7 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-1nbia4r");
+    			attr_dev(section, "class", "svelte-t7iys9");
     			add_location(section, file$5, 147, 8, 4040);
     		},
     		m: function mount(target, anchor) {
@@ -1526,19 +1526,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-1nbia4r");
+    			attr_dev(img0, "class", "fish svelte-t7iys9");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
     			add_location(img0, file$5, 123, 8, 3255);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			attr_dev(img1, "class", "svelte-1nbia4r");
+    			attr_dev(img1, "class", "svelte-t7iys9");
     			add_location(img1, file$5, 135, 12, 3669);
-    			attr_dev(div0, "class", "answers svelte-1nbia4r");
+    			attr_dev(div0, "class", "answers svelte-t7iys9");
     			add_location(div0, file$5, 136, 12, 3733);
-    			attr_dev(div1, "class", "answer-box svelte-1nbia4r");
+    			attr_dev(div1, "class", "answer-box svelte-t7iys9");
     			add_location(div1, file$5, 134, 8, 3632);
-    			attr_dev(section, "class", "svelte-1nbia4r");
+    			attr_dev(section, "class", "svelte-t7iys9");
     			add_location(section, file$5, 122, 4, 3237);
     		},
     		m: function mount(target, anchor) {
@@ -1686,7 +1686,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Next Fish!";
     			add_location(button, file$5, 128, 16, 3429);
-    			attr_dev(div, "class", "result svelte-1nbia4r");
+    			attr_dev(div, "class", "result svelte-t7iys9");
     			add_location(div, file$5, 126, 12, 3345);
     		},
     		m: function mount(target, anchor) {

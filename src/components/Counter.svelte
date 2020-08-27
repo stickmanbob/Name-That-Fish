@@ -11,7 +11,7 @@
 
 <style>
     div{
-        /* color: lightseagreen; */
+       
         color: black;
         display: flex;
         flex-direction: column;
@@ -20,10 +20,9 @@
         margin-top: 5px;
         border-radius: 8px;
         padding: 5px 20px;
-        /* background-color: rgb(181,114,63,0.7); */
+       
         background-image: linear-gradient(to bottom,  #c9a66f, #9a7149);
-        /* -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black; */
+        
     }
 
     .field{

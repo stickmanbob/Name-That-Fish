@@ -13,6 +13,8 @@
     h1{
         font-size: 30px;
         text-align: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
     }
     h1.right{
         color:green;

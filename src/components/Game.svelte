@@ -157,7 +157,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 40px;
+        margin-top: 20px;
         height: 100vh;
     }
 
