@@ -171,7 +171,7 @@
     .answer-box img{
         box-sizing: border-box;
 
-        width: 650px;
+        width: 680px;
         height: 200px;
     }
 
@@ -185,7 +185,7 @@
         align-items: flex-start;
         justify-content: center; */
         column-count: 2;
-        column-gap: 10px;
+        column-gap: 20px;
         column-width: 280px;
         width: fit-content;
     }
@@ -203,7 +203,7 @@
 
     img.fish{
         max-height:400px; 
-        max-width: 680px;
+        max-width: 650px;
         object-fit: contain;
         border: 8px solid black;
         border-radius: 6px;

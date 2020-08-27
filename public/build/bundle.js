@@ -1454,7 +1454,7 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-a8e8xc");
+    			attr_dev(section, "class", "svelte-rbhhpr");
     			add_location(section, file$5, 149, 8, 4090);
     		},
     		m: function mount(target, anchor) {
@@ -1549,19 +1549,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-a8e8xc");
+    			attr_dev(img0, "class", "fish svelte-rbhhpr");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
     			add_location(img0, file$5, 123, 8, 3295);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			attr_dev(img1, "class", "svelte-a8e8xc");
+    			attr_dev(img1, "class", "svelte-rbhhpr");
     			add_location(img1, file$5, 137, 12, 3719);
-    			attr_dev(div0, "class", "answers svelte-a8e8xc");
+    			attr_dev(div0, "class", "answers svelte-rbhhpr");
     			add_location(div0, file$5, 138, 12, 3783);
-    			attr_dev(div1, "class", "answer-box svelte-a8e8xc");
+    			attr_dev(div1, "class", "answer-box svelte-rbhhpr");
     			add_location(div1, file$5, 136, 8, 3682);
-    			attr_dev(section, "class", "svelte-a8e8xc");
+    			attr_dev(section, "class", "svelte-rbhhpr");
     			add_location(section, file$5, 122, 4, 3277);
     		},
     		m: function mount(target, anchor) {
@@ -1708,9 +1708,9 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Next Fish!";
-    			attr_dev(button, "class", "svelte-a8e8xc");
+    			attr_dev(button, "class", "svelte-rbhhpr");
     			add_location(button, file$5, 130, 16, 3578);
-    			attr_dev(div, "class", "result svelte-a8e8xc");
+    			attr_dev(div, "class", "result svelte-rbhhpr");
     			add_location(div, file$5, 128, 12, 3494);
     		},
     		m: function mount(target, anchor) {
