@@ -25,10 +25,6 @@
         
     }
 
-    .field{
-        
-    }
-
     .attempts{
         color: red; 
         -webkit-text-stroke-width: 1px;

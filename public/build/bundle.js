@@ -1255,15 +1255,15 @@ var app = (function () {
     			t5 = text("Wrong answers left: ");
     			span2 = element("span");
     			t6 = text(/*numAttempts*/ ctx[0]);
-    			attr_dev(span0, "class", "questions svelte-g0yxzt");
+    			attr_dev(span0, "class", "questions svelte-kzt66j");
     			add_location(span0, file$4, 7, 34, 149);
-    			attr_dev(span1, "class", "field svelte-g0yxzt");
+    			attr_dev(span1, "class", "field");
     			add_location(span1, file$4, 7, 4, 119);
-    			attr_dev(span2, "class", "attempts svelte-g0yxzt");
+    			attr_dev(span2, "class", "attempts svelte-kzt66j");
     			add_location(span2, file$4, 8, 44, 268);
-    			attr_dev(span3, "class", "field svelte-g0yxzt");
+    			attr_dev(span3, "class", "field");
     			add_location(span3, file$4, 8, 4, 228);
-    			attr_dev(div, "class", "svelte-g0yxzt");
+    			attr_dev(div, "class", "svelte-kzt66j");
     			add_location(div, file$4, 6, 0, 109);
     		},
     		l: function claim(nodes) {
