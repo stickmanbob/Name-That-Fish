@@ -1,6 +1,6 @@
 # Name That Fish
 A fun quiz game that tests your knowledge of our piscene pals!
-Built in two days for the Mintbean Svelte.js hackathon challenge.
+Built in two days for the Mintbean Svelte.js hackathon challenge. Inspired by the ways we used to waste time at troop meetings in Boy Scout Troop 476.
 
 ### [Try it now!](https://stickmanbob.github.io/svelteQuizGame/)
 
