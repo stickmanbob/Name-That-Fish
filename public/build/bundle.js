@@ -892,11 +892,11 @@ var app = (function () {
     			h1.textContent = "Shiver Me Timbers, yer fish knowledge needs some haulin'!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "svelte-hch4l5");
+    			attr_dev(h1, "class", "svelte-1hnq0gg");
     			add_location(h1, file$3, 11, 8, 200);
     			if (img.src !== (img_src_value = "./assets/lose.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-hch4l5");
+    			attr_dev(img, "class", "svelte-1hnq0gg");
     			add_location(img, file$3, 12, 8, 275);
     		},
     		m: function mount(target, anchor) {
@@ -935,11 +935,11 @@ var app = (function () {
     			h1.textContent = "Congrats Matey, you win!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "svelte-hch4l5");
+    			attr_dev(h1, "class", "svelte-1hnq0gg");
     			add_location(h1, file$3, 8, 8, 102);
     			if (img.src !== (img_src_value = "./assets/win.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-hch4l5");
+    			attr_dev(img, "class", "svelte-1hnq0gg");
     			add_location(img, file$3, 9, 8, 144);
     		},
     		m: function mount(target, anchor) {
@@ -987,9 +987,9 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Play Again!";
-    			attr_dev(button, "class", "svelte-hch4l5");
+    			attr_dev(button, "class", "svelte-1hnq0gg");
     			add_location(button, file$3, 14, 4, 326);
-    			attr_dev(div, "class", "svelte-hch4l5");
+    			attr_dev(div, "class", "svelte-1hnq0gg");
     			add_location(div, file$3, 6, 0, 71);
     		},
     		l: function claim(nodes) {

@@ -40,6 +40,26 @@
 
     button{
         margin-top: 10px;
+        box-shadow:inset 0px 1px 0px 0px #a6827e;
+        background-color:#7d5d3b;
+        border-radius:3px;
+        border:1px solid #54381e;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:25px;
+        padding:12px 28px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #4d3534;
+    }
+
+    button:hover{
+        background-color:#634b30;
+    }
+
+    button:active{
+        position:relative;
+	    top:1px;
     }
     @media (max-width: 450px){
 
