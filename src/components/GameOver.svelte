@@ -26,7 +26,6 @@
     padding:20px;
     background-color: #d4d2ab;
 
-    margin-top: 50px;
    }
 
     h1{

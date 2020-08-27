@@ -1,8 +1,8 @@
 main.svelte-mdsmvq{width:100%;margin:0 auto;display:flex;flex-direction:column;align-items:center;background-image:url("../assets/background.jpg");background-size:cover;min-height:fit-content}@media(min-width: 640px){main.svelte-mdsmvq{max-width:none}}
 h1.svelte-ct7ya5{font-size:40px}h1.right.svelte-ct7ya5{color:green}h1.wrong.svelte-ct7ya5{color:red}
-section.svelte-l79av9{display:flex;flex-direction:column;align-items:center;margin-top:40px}.answer-box.svelte-l79av9{position:relative;margin-top:50px}.answers.svelte-l79av9{position:absolute;top:10%;left:30%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}img.fish.svelte-l79av9{height:400px;max-width:100%}
+section.svelte-wntfzb{display:flex;flex-direction:column;align-items:center;margin-top:40px;height:100vh}.answer-box.svelte-wntfzb{position:relative;margin-top:50px}.answers.svelte-wntfzb{position:absolute;top:10%;left:30%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}img.fish.svelte-wntfzb{height:400px;max-width:600px;object-fit:contain;border:8px solid black;border-radius:6px;background-color:gray}
 i.svelte-1i3esy0{font-size:40px;color:rgb(92, 53, 53)}i.svelte-1i3esy0:hover{color:black;cursor:pointer}div.svelte-1i3esy0{display:flex;align-items:center;padding:10px 0px}span.svelte-1i3esy0{font-size:20px;line-height:40px;font-weight:600;color:black}
-div.svelte-1ccwrpg{display:flex;flex-direction:column;align-items:center;border:2px solid black;border-radius:6px;padding:20px;background-color:#d4d2ab;margin-top:50px}h1.svelte-1ccwrpg{font-size:36px;color:black;font-weight:600}
-header.svelte-1oglq1d{display:flex;justify-content:center;width:100%}h1.svelte-1oglq1d{font-size:48px;font-weight:600}
+div.svelte-pgcpby{display:flex;flex-direction:column;align-items:center;border:2px solid black;border-radius:6px;padding:20px;background-color:#d4d2ab}h1.svelte-pgcpby{font-size:36px;color:black;font-weight:600}
+header.svelte-1a1r5zi{display:flex;justify-content:center;width:100%}h1.svelte-1a1r5zi{font-size:48px;font-weight:600;color:white}
 
 /*# sourceMappingURL=bundle.css.map */

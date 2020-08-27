@@ -7,10 +7,20 @@
     import GameOver from "./GameOver.svelte";
     import CorrectMsg from "./CorrectMsg.svelte";
 
+    //Initialize game state
     let allFishNames = Object.keys(fishURLs);
 
     let newFishNames = Array.from(allFishNames);
 
+    var currFish = getNewFishName();
+    var fishURL = fishURLs[currFish];
+    var answers = getAnswers(currFish);
+    var gameOver = false;
+    var correct = null;
+    var disableButtons = false;
+    var score = 0;
+    var numAttempts = 3;
+    var didWin = false;
     
     // Returns a new fish that we have not seen before
     // Used to select the next fish for guessing
@@ -96,17 +106,7 @@
         didWin = false; 
     }
 
-    //Initialize game state
-
-    var currFish = getNewFishName();
-    var fishURL = fishURLs[currFish];
-    var answers = getAnswers(currFish);
-    var gameOver = false;
-    var correct = null;
-    var disableButtons = false;
-    var score = 0;
-    var numAttempts = 3;
-    var didWin = false; 
+     
 </script>
 
 <!-- Main Component -->
@@ -134,8 +134,9 @@
     </section>
     
 {:else}
-    
+        <section>
         <GameOver reset={resetGame} didWin={didWin}/>
+        </section>
     
 {/if}
 
@@ -146,6 +147,7 @@
         flex-direction: column;
         align-items: center;
         margin-top: 40px;
+        height: 100vh;
     }
 
     .answer-box{
@@ -169,6 +171,10 @@
 
     img.fish{
         height:400px; 
-        max-width: 100%;
+        max-width: 600px;
+        object-fit: contain;
+        border: 8px solid black;
+        border-radius: 6px;
+        background-color: gray;
     }
 </style>

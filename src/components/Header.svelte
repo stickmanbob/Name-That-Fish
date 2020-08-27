@@ -12,5 +12,6 @@
     h1{
         font-size: 48px;
         font-weight: 600;
+        color:white;
     }
 </style>

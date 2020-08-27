@@ -394,9 +394,9 @@ var app = (function () {
     			header = element("header");
     			h1 = element("h1");
     			h1.textContent = "Name that Fish!";
-    			attr_dev(h1, "class", "svelte-1oglq1d");
+    			attr_dev(h1, "class", "svelte-1a1r5zi");
     			add_location(h1, file, 1, 4, 13);
-    			attr_dev(header, "class", "svelte-1oglq1d");
+    			attr_dev(header, "class", "svelte-1a1r5zi");
     			add_location(header, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -897,7 +897,7 @@ var app = (function () {
     			p = element("p");
     			a = element("a");
     			a.textContent = "via GIPHY";
-    			attr_dev(h1, "class", "svelte-1ccwrpg");
+    			attr_dev(h1, "class", "svelte-pgcpby");
     			add_location(h1, file$3, 11, 8, 420);
     			if (iframe.src !== (iframe_src_value = "https://giphy.com/embed/1vz0yLYFTJEVG")) attr_dev(iframe, "src", iframe_src_value);
     			attr_dev(iframe, "width", "480");
@@ -954,7 +954,7 @@ var app = (function () {
     			p = element("p");
     			a = element("a");
     			a.textContent = "via GIPHY";
-    			attr_dev(h1, "class", "svelte-1ccwrpg");
+    			attr_dev(h1, "class", "svelte-pgcpby");
     			add_location(h1, file$3, 8, 8, 102);
     			if (iframe.src !== (iframe_src_value = "https://giphy.com/embed/Jev4iU72S9RYc")) attr_dev(iframe, "src", iframe_src_value);
     			attr_dev(iframe, "width", "480");
@@ -1016,7 +1016,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Play Again!";
     			add_location(button, file$3, 14, 4, 763);
-    			attr_dev(div, "class", "svelte-1ccwrpg");
+    			attr_dev(div, "class", "svelte-pgcpby");
     			add_location(div, file$3, 6, 0, 71);
     		},
     		l: function claim(nodes) {
@@ -1162,6 +1162,7 @@ var app = (function () {
 
     // (136:0) {:else}
     function create_else_block$1(ctx) {
+    	let section;
     	let gameover;
     	let current;
 
@@ -1175,10 +1176,14 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			section = element("section");
     			create_component(gameover.$$.fragment);
+    			attr_dev(section, "class", "svelte-wntfzb");
+    			add_location(section, file$4, 136, 8, 3606);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(gameover, target, anchor);
+    			insert_dev(target, section, anchor);
+    			mount_component(gameover, section, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -1196,7 +1201,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(gameover, detaching);
+    			if (detaching) detach_dev(section);
+    			destroy_component(gameover);
     		}
     	};
 
@@ -1253,19 +1259,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-l79av9");
+    			attr_dev(img0, "class", "fish svelte-wntfzb");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[0])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
-    			add_location(img0, file$4, 116, 8, 3019);
+    			add_location(img0, file$4, 116, 8, 3023);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			add_location(img1, file$4, 124, 12, 3264);
-    			attr_dev(div0, "class", "answers svelte-l79av9");
-    			add_location(div0, file$4, 125, 12, 3328);
-    			attr_dev(div1, "class", "answer-box svelte-l79av9");
-    			add_location(div1, file$4, 123, 8, 3227);
-    			attr_dev(section, "class", "svelte-l79av9");
-    			add_location(section, file$4, 115, 4, 3001);
+    			add_location(img1, file$4, 124, 12, 3268);
+    			attr_dev(div0, "class", "answers svelte-wntfzb");
+    			add_location(div0, file$4, 125, 12, 3332);
+    			attr_dev(div1, "class", "answer-box svelte-wntfzb");
+    			add_location(div1, file$4, 123, 8, 3231);
+    			attr_dev(section, "class", "svelte-wntfzb");
+    			add_location(section, file$4, 115, 4, 3005);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1398,7 +1404,7 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Next Fish!";
-    			add_location(button, file$4, 120, 12, 3152);
+    			add_location(button, file$4, 120, 12, 3156);
     		},
     		m: function mount(target, anchor) {
     			mount_component(correctmsg, target, anchor);
@@ -1581,6 +1587,15 @@ var app = (function () {
     function instance$4($$self, $$props, $$invalidate) {
     	let allFishNames = Object.keys(fishURLs);
     	let newFishNames = Array.from(allFishNames);
+    	var currFish = getNewFishName();
+    	var fishURL = fishURLs[currFish];
+    	var answers = getAnswers(currFish);
+    	var gameOver = false;
+    	var correct = null;
+    	var disableButtons = false;
+    	var score = 0;
+    	var numAttempts = 3;
+    	var didWin = false;
 
     	// Returns a new fish that we have not seen before
     	// Used to select the next fish for guessing
@@ -1665,17 +1680,6 @@ var app = (function () {
     		$$invalidate(5, didWin = false);
     	}
 
-    	//Initialize game state
-    	var currFish = getNewFishName();
-
-    	var fishURL = fishURLs[currFish];
-    	var answers = getAnswers(currFish);
-    	var gameOver = false;
-    	var correct = null;
-    	var disableButtons = false;
-    	var score = 0;
-    	var numAttempts = 3;
-    	var didWin = false;
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
@@ -1695,13 +1699,6 @@ var app = (function () {
     		CorrectMsg,
     		allFishNames,
     		newFishNames,
-    		getNewFishName,
-    		getAnswers,
-    		handleAnswer,
-    		nextQuestion,
-    		youWin,
-    		youLose,
-    		resetGame,
     		currFish,
     		fishURL,
     		answers,
@@ -1710,7 +1707,14 @@ var app = (function () {
     		disableButtons,
     		score,
     		numAttempts,
-    		didWin
+    		didWin,
+    		getNewFishName,
+    		getAnswers,
+    		handleAnswer,
+    		nextQuestion,
+    		youWin,
+    		youLose,
+    		resetGame
     	});
 
     	$$self.$inject_state = $$props => {
