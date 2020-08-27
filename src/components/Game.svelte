@@ -7,10 +7,10 @@
     import GameOver from "./GameOver.svelte";
     import CorrectMsg from "./CorrectMsg.svelte";
     import Counter from "./Counter.svelte";
+    import { fade, fly } from 'svelte/transition';
 
     //Initialize game state
     let allFishNames = Object.keys(fishURLs);
-    console.log(fishURLs, allFishNames);
     let newFishNames = getFishSet(10);
     var questionsLeft = newFishNames.length;
     var questionNumber = 0;
@@ -125,13 +125,13 @@
 
 {#if !gameOver}
 
-    <section>
-        <img class="fish" src={fishURL} alt="A fish!">
+    <section transition:fade>
+        <img  class="fish" src={fishURL} alt="A fish!">
         
         <Counter numAttempts={numAttempts} questionNumber={questionNumber} questionsLeft={questionsLeft} />
 
         {#if correct}
-            <div class="result">
+            <div in:fade class="result">
                 <CorrectMsg status={correct}/>
                 <button on:click={nextQuestion}>Next Fish!</button>
             </div>
@@ -152,7 +152,7 @@
     </section>
     
 {:else}
-        <section>
+        <section in:fly={{ y: 200, duration: 2000 }} out:fade>
         <GameOver reset={resetGame} didWin={didWin}/>
         </section>
     
