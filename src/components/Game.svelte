@@ -10,7 +10,7 @@
 
     //Initialize game state
     let allFishNames = Object.keys(fishURLs);
-
+    console.log(fishURLs, allFishNames);
     let newFishNames = Array.from(allFishNames);
     var questionsLeft = newFishNames.length;
     var questionNumber = 0;
@@ -185,6 +185,8 @@
         align-items: flex-start;
         justify-content: center; */
         column-count: 2;
+        column-gap: 10px;
+        column-width: 280px;
         width: fit-content;
     }
 
@@ -200,8 +202,8 @@
     }
 
     img.fish{
-        height:400px; 
-        max-width: 600px;
+        max-height:400px; 
+        max-width: 680px;
         object-fit: contain;
         border: 8px solid black;
         border-radius: 6px;

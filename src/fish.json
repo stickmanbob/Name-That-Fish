@@ -1,6 +1,23 @@
 {
-    "Small Mouth Bass": "https://www.pfo.net/wp-content/uploads/2018/10/smallmouthBassSection.png",
-    "Large Mouth Bass": "https://images-na.ssl-images-amazon.com/images/I/615OqtVIAML._AC_SL1007_.jpg",
-    "Clownfish":"http://www.aquariumofpacific.org/images/made/images/uploads/clownfish_1000_750_80auto_s.jpg",
-    "Blue Tang": "https://www.readunwritten.com/wp-content/uploads/13625268_10154328011036719_16746747_n-696x404.jpg"
+    "Small Mouth Bass": "./assets/fishPics/smallmouthbass.jpg",
+    "Large Mouth Bass": "./assets/fishPics/largemouthbass.jpg",
+    "Clownfish":"./assets/fishPics/clownfish.jpg",
+    "Blue Tang": "./assets/fishPics/bluetang.jpg",
+    "Angel Fish": "./assets/fishPics/anglerfish.jpg",
+    "Angler Fish": "./assets/fishPics/anglerfish.jpg",
+    "Butterfly Fish": "./assets/fishPics/butterflyfish.jpeg",
+    "Great White Shark":"./assets/fishPics/greatwhite.jpg",
+    "Grouper":"./assets/fishPics/grouper.jpeg",
+    "Hammerhead Shark":"./assets/fishPics/hammerhead.jpg",
+    "Leopard Shark":"./assets/fishPics/leopardshark.jpg",
+    "Mandarin Fish":"./assets/fishPics/mandarinfish.jpeg",
+    "Pirhana":"./assets/fishPics/piranha.jpeg",
+    "Rainbow Trout":"./assets/fishPics/rainbowtrout.jpg",
+    "Salmon":"./assets/fishPics/Salmon.jpg",
+    "Sardine":"./assets/fishPics/sardine.jpg",
+    "Sunfish":"./assets/fishPics/sunfish.jpg",
+    "Swordfish":"./assets/fishPics/swordfish.jpg",
+    "Tuna":"./assets/fishPics/tuna.jpg",
+    "Whale Shark":"./assets/fishPics/whaleshark.jpg"
+
 }
