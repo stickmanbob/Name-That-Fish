@@ -1,4 +1,7 @@
-main.svelte-o5cq97{max-width:300px;margin:0 auto;display:flex;flex-direction:column;align-items:center}@media(min-width: 640px){main.svelte-o5cq97{max-width:none}}
+main.svelte-gwrz94{max-width:300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;background-image:url("../assets/background.jpg");background-size:cover;height:100%}@media(min-width: 640px){main.svelte-gwrz94{max-width:none}}
+h1.svelte-ct7ya5{font-size:40px}h1.right.svelte-ct7ya5{color:green}h1.wrong.svelte-ct7ya5{color:red}
+section.svelte-4rocl7{display:flex;flex-direction:column;align-items:center}.answers.svelte-4rocl7{width:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:50px;background:transparent url(https://img2.annthegran.com/PrintArt/XLarge/Great_Notions/pg52403.jpg);background-size:cover;padding:10px 30px}img.fish.svelte-4rocl7{height:400px}
+i.svelte-oca7eu{font-size:40px;color:rgb(92, 53, 53)}i.svelte-oca7eu:hover{color:black;cursor:pointer}div.svelte-oca7eu{display:flex;align-items:center;padding:10px 0px}span.svelte-oca7eu{font-size:20px;font-weight:600}
 header.svelte-1oglq1d{display:flex;justify-content:center;width:100%}h1.svelte-1oglq1d{font-size:48px;font-weight:600}
 
 /*# sourceMappingURL=bundle.css.map */
