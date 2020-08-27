@@ -394,9 +394,9 @@ var app = (function () {
     			header = element("header");
     			h1 = element("h1");
     			h1.textContent = "Name that Fish!";
-    			attr_dev(h1, "class", "svelte-srudon");
+    			attr_dev(h1, "class", "svelte-p0rd4f");
     			add_location(h1, file, 1, 4, 13);
-    			attr_dev(header, "class", "svelte-srudon");
+    			attr_dev(header, "class", "svelte-p0rd4f");
     			add_location(header, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -883,45 +883,31 @@ var app = (function () {
     function create_else_block(ctx) {
     	let h1;
     	let t1;
-    	let iframe;
-    	let iframe_src_value;
-    	let p;
-    	let a;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Shiver Me Timbers, yer fish knowledge needs some haulin'!";
     			t1 = space();
-    			iframe = element("iframe");
-    			p = element("p");
-    			a = element("a");
-    			a.textContent = "via GIPHY";
-    			attr_dev(h1, "class", "svelte-pgcpby");
-    			add_location(h1, file$3, 11, 8, 420);
-    			if (iframe.src !== (iframe_src_value = "https://giphy.com/embed/1vz0yLYFTJEVG")) attr_dev(iframe, "src", iframe_src_value);
-    			attr_dev(iframe, "width", "480");
-    			attr_dev(iframe, "height", "195");
-    			attr_dev(iframe, "frameborder", "0");
-    			attr_dev(iframe, "class", "giphy-embed");
-    			iframe.allowFullscreen = true;
-    			add_location(iframe, file$3, 12, 8, 495);
-    			attr_dev(a, "href", "https://giphy.com/gifs/pirates-of-the-caribbean-will-turner-davy-jones-1vz0yLYFTJEVG");
-    			add_location(a, file$3, 12, 149, 636);
-    			add_location(p, file$3, 12, 146, 633);
+    			img = element("img");
+    			attr_dev(h1, "class", "svelte-hch4l5");
+    			add_location(h1, file$3, 11, 8, 200);
+    			if (img.src !== (img_src_value = "./assets/lose.gif")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			attr_dev(img, "class", "svelte-hch4l5");
+    			add_location(img, file$3, 12, 8, 275);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, iframe, anchor);
-    			insert_dev(target, p, anchor);
-    			append_dev(p, a);
+    			insert_dev(target, img, anchor);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(iframe);
-    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(img);
     		}
     	};
 
@@ -940,45 +926,31 @@ var app = (function () {
     function create_if_block$2(ctx) {
     	let h1;
     	let t1;
-    	let iframe;
-    	let iframe_src_value;
-    	let p;
-    	let a;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Congrats Matey, you win!";
     			t1 = space();
-    			iframe = element("iframe");
-    			p = element("p");
-    			a = element("a");
-    			a.textContent = "via GIPHY";
-    			attr_dev(h1, "class", "svelte-pgcpby");
+    			img = element("img");
+    			attr_dev(h1, "class", "svelte-hch4l5");
     			add_location(h1, file$3, 8, 8, 102);
-    			if (iframe.src !== (iframe_src_value = "https://giphy.com/embed/Jev4iU72S9RYc")) attr_dev(iframe, "src", iframe_src_value);
-    			attr_dev(iframe, "width", "480");
-    			attr_dev(iframe, "height", "198");
-    			attr_dev(iframe, "frameborder", "0");
-    			attr_dev(iframe, "class", "giphy-embed");
-    			iframe.allowFullscreen = true;
-    			add_location(iframe, file$3, 9, 8, 144);
-    			attr_dev(a, "href", "https://giphy.com/gifs/johnny-depp-pirates-of-the-caribbean-jack-sparrow-Jev4iU72S9RYc");
-    			add_location(a, file$3, 9, 149, 285);
-    			add_location(p, file$3, 9, 146, 282);
+    			if (img.src !== (img_src_value = "./assets/win.gif")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "");
+    			attr_dev(img, "class", "svelte-hch4l5");
+    			add_location(img, file$3, 9, 8, 144);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, iframe, anchor);
-    			insert_dev(target, p, anchor);
-    			append_dev(p, a);
+    			insert_dev(target, img, anchor);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(iframe);
-    			if (detaching) detach_dev(p);
+    			if (detaching) detach_dev(img);
     		}
     	};
 
@@ -1015,8 +987,9 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Play Again!";
-    			add_location(button, file$3, 14, 4, 763);
-    			attr_dev(div, "class", "svelte-pgcpby");
+    			attr_dev(button, "class", "svelte-hch4l5");
+    			add_location(button, file$3, 14, 4, 326);
+    			attr_dev(div, "class", "svelte-hch4l5");
     			add_location(div, file$3, 6, 0, 71);
     		},
     		l: function claim(nodes) {
@@ -1178,7 +1151,7 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-alo2ic");
+    			attr_dev(section, "class", "svelte-10eaqqe");
     			add_location(section, file$4, 136, 8, 3606);
     		},
     		m: function mount(target, anchor) {
@@ -1259,19 +1232,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-alo2ic");
+    			attr_dev(img0, "class", "fish svelte-10eaqqe");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[0])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
     			add_location(img0, file$4, 116, 8, 3023);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			attr_dev(img1, "class", "svelte-alo2ic");
+    			attr_dev(img1, "class", "svelte-10eaqqe");
     			add_location(img1, file$4, 124, 12, 3268);
-    			attr_dev(div0, "class", "answers svelte-alo2ic");
+    			attr_dev(div0, "class", "answers svelte-10eaqqe");
     			add_location(div0, file$4, 125, 12, 3332);
-    			attr_dev(div1, "class", "answer-box svelte-alo2ic");
+    			attr_dev(div1, "class", "answer-box svelte-10eaqqe");
     			add_location(div1, file$4, 123, 8, 3231);
-    			attr_dev(section, "class", "svelte-alo2ic");
+    			attr_dev(section, "class", "svelte-10eaqqe");
     			add_location(section, file$4, 115, 4, 3005);
     		},
     		m: function mount(target, anchor) {

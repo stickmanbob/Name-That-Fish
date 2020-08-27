@@ -183,15 +183,22 @@
     }
 
     @media (max-width: 450px){
+        section{
+            margin-top: 10px;
+        }
         .answer-box img{
             width: 360px;
-            height: 400px;
+            height: 300px;
         }
 
         img.fish{
             width: 360px;
             box-sizing: border-box;
             height: initial;
+        }
+
+        .answers{
+            left:20%;
         }
     }
 

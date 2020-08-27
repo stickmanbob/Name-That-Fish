@@ -7,10 +7,10 @@
 <div>
     {#if didWin}
         <h1>Congrats Matey, you win!</h1>
-        <iframe src="https://giphy.com/embed/Jev4iU72S9RYc" width="480" height="198" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/johnny-depp-pirates-of-the-caribbean-jack-sparrow-Jev4iU72S9RYc">via GIPHY</a></p>
+        <img src="./assets/win.gif" alt="">
     {:else}
         <h1>Shiver Me Timbers, yer fish knowledge needs some haulin'!</h1>
-        <iframe src="https://giphy.com/embed/1vz0yLYFTJEVG" width="480" height="195" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pirates-of-the-caribbean-will-turner-davy-jones-1vz0yLYFTJEVG">via GIPHY</a></p>
+        <img src="./assets/lose.gif" alt="">
     {/if}
     <button on:click={reset}>Play Again!</button>
 </div>
@@ -23,9 +23,13 @@
 
     border: 2px solid black;
     border-radius: 6px;
-    padding:20px;
+    padding: 10px 20px;
     background-color: #d4d2ab;
 
+   }
+
+   img{
+       margin-top: 20px;
    }
 
     h1{
@@ -34,4 +38,29 @@
         font-weight: 600;
     }
 
+    button{
+        margin-top: 10px;
+    }
+    @media (max-width: 450px){
+
+        div{
+            padding: 5px;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        img{
+            max-width:300px
+        }
+
+        h1{
+            font-size:28px;
+        }
+    }
+
+    /* @media (max-width: 320px){
+        img{
+            max-width: 320px;
+        }
+    } */
 </style>
