@@ -491,39 +491,21 @@ var app = (function () {
 
     const file$1 = "src/components/GameButton.svelte";
 
-    function create_fragment$1(ctx) {
-    	let div;
+    // (8:4) {#if !disableButtons}
+    function create_if_block(ctx) {
     	let i;
-    	let t0;
-    	let span;
-    	let t1;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
-    			div = element("div");
     			i = element("i");
-    			t0 = space();
-    			span = element("span");
-    			t1 = text(/*label*/ ctx[0]);
-    			attr_dev(i, "class", "fas fa-dharmachakra svelte-oca7eu");
+    			attr_dev(i, "class", "fas fa-dharmachakra svelte-1ci13k2");
     			attr_dev(i, "data-value", /*label*/ ctx[0]);
-    			add_location(i, file$1, 7, 4, 142);
-    			attr_dev(span, "class", "svelte-oca7eu");
-    			add_location(span, file$1, 8, 5, 221);
-    			attr_dev(div, "class", "svelte-oca7eu");
-    			add_location(div, file$1, 5, 0, 66);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    			add_location(i, file$1, 8, 8, 137);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, i);
-    			append_dev(div, t0);
-    			append_dev(div, span);
-    			append_dev(span, t1);
+    			insert_dev(target, i, anchor);
 
     			if (!mounted) {
     				dispose = listen_dev(
@@ -540,11 +522,72 @@ var app = (function () {
     				mounted = true;
     			}
     		},
-    		p: function update(new_ctx, [dirty]) {
+    		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
     			if (dirty & /*label*/ 1) {
     				attr_dev(i, "data-value", /*label*/ ctx[0]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(8:4) {#if !disableButtons}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let div;
+    	let t0;
+    	let span;
+    	let t1;
+    	let if_block = !/*disableButtons*/ ctx[2] && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (if_block) if_block.c();
+    			t0 = space();
+    			span = element("span");
+    			t1 = text(/*label*/ ctx[0]);
+    			attr_dev(span, "class", "svelte-1ci13k2");
+    			add_location(span, file$1, 10, 5, 226);
+    			attr_dev(div, "class", "svelte-1ci13k2");
+    			add_location(div, file$1, 6, 0, 97);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			if (if_block) if_block.m(div, null);
+    			append_dev(div, t0);
+    			append_dev(div, span);
+    			append_dev(span, t1);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!/*disableButtons*/ ctx[2]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					if_block.m(div, t0);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
     			}
 
     			if (dirty & /*label*/ 1) set_data_dev(t1, /*label*/ ctx[0]);
@@ -553,8 +596,7 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			mounted = false;
-    			dispose();
+    			if (if_block) if_block.d();
     		}
     	};
 
@@ -572,7 +614,8 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { label } = $$props;
     	let { onPress } = $$props;
-    	const writable_props = ["label", "onPress"];
+    	let { disableButtons } = $$props;
+    	const writable_props = ["label", "onPress", "disableButtons"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<GameButton> was created with unknown prop '${key}'`);
@@ -584,26 +627,28 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ("label" in $$props) $$invalidate(0, label = $$props.label);
     		if ("onPress" in $$props) $$invalidate(1, onPress = $$props.onPress);
+    		if ("disableButtons" in $$props) $$invalidate(2, disableButtons = $$props.disableButtons);
     	};
 
-    	$$self.$capture_state = () => ({ label, onPress });
+    	$$self.$capture_state = () => ({ label, onPress, disableButtons });
 
     	$$self.$inject_state = $$props => {
     		if ("label" in $$props) $$invalidate(0, label = $$props.label);
     		if ("onPress" in $$props) $$invalidate(1, onPress = $$props.onPress);
+    		if ("disableButtons" in $$props) $$invalidate(2, disableButtons = $$props.disableButtons);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [label, onPress];
+    	return [label, onPress, disableButtons];
     }
 
     class GameButton extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { label: 0, onPress: 1 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { label: 0, onPress: 1, disableButtons: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -622,6 +667,10 @@ var app = (function () {
     		if (/*onPress*/ ctx[1] === undefined && !("onPress" in props)) {
     			console.warn("<GameButton> was created without expected prop 'onPress'");
     		}
+
+    		if (/*disableButtons*/ ctx[2] === undefined && !("disableButtons" in props)) {
+    			console.warn("<GameButton> was created without expected prop 'disableButtons'");
+    		}
     	}
 
     	get label() {
@@ -637,6 +686,14 @@ var app = (function () {
     	}
 
     	set onPress(value) {
+    		throw new Error("<GameButton>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get disableButtons() {
+    		throw new Error("<GameButton>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set disableButtons(value) {
     		throw new Error("<GameButton>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -676,7 +733,7 @@ var app = (function () {
     }
 
     // (5:0) {#if status === 'correct'}
-    function create_if_block(ctx) {
+    function create_if_block$1(ctx) {
     	let h1;
 
     	const block = {
@@ -696,7 +753,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(5:0) {#if status === 'correct'}",
     		ctx
@@ -709,7 +766,7 @@ var app = (function () {
     	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*status*/ ctx[0] === "correct") return create_if_block;
+    		if (/*status*/ ctx[0] === "correct") return create_if_block$1;
     		if (/*status*/ ctx[0] === "incorrect") return create_if_block_1;
     	}
 
@@ -825,11 +882,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[13] = list[i];
     	return child_ctx;
     }
 
-    // (97:0) {:else}
+    // (101:0) {:else}
     function create_else_block(ctx) {
     	let h1;
 
@@ -837,7 +894,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "YOU WIN!!!";
-    			add_location(h1, file$3, 97, 4, 2371);
+    			add_location(h1, file$3, 101, 4, 2569);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -854,23 +911,27 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(97:0) {:else}",
+    		source: "(101:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:0) {#if !gameOver}
-    function create_if_block$1(ctx) {
+    // (84:0) {#if !gameOver}
+    function create_if_block$2(ctx) {
     	let section;
     	let img;
     	let img_src_value;
     	let t0;
     	let correctmsg;
     	let t1;
+    	let button;
+    	let t3;
     	let div;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	correctmsg = new CorrectMsg({
     			props: { status: /*correct*/ ctx[3] },
@@ -896,6 +957,9 @@ var app = (function () {
     			t0 = space();
     			create_component(correctmsg.$$.fragment);
     			t1 = space();
+    			button = element("button");
+    			button.textContent = "Next Fish!";
+    			t3 = space();
     			div = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -905,11 +969,12 @@ var app = (function () {
     			attr_dev(img, "class", "fish svelte-4rocl7");
     			if (img.src !== (img_src_value = /*fishURL*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "A fish!");
-    			add_location(img, file$3, 85, 8, 2068);
+    			add_location(img, file$3, 86, 8, 2171);
+    			add_location(button, file$3, 90, 8, 2267);
     			attr_dev(div, "class", "answers svelte-4rocl7");
-    			add_location(div, file$3, 88, 8, 2163);
+    			add_location(div, file$3, 92, 8, 2328);
     			attr_dev(section, "class", "svelte-4rocl7");
-    			add_location(section, file$3, 84, 4, 2050);
+    			add_location(section, file$3, 85, 4, 2153);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -917,6 +982,8 @@ var app = (function () {
     			append_dev(section, t0);
     			mount_component(correctmsg, section, null);
     			append_dev(section, t1);
+    			append_dev(section, button);
+    			append_dev(section, t3);
     			append_dev(section, div);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -924,6 +991,11 @@ var app = (function () {
     			}
 
     			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*nextQuestion*/ ctx[6], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
     			if (!current || dirty & /*fishURL*/ 1 && img.src !== (img_src_value = /*fishURL*/ ctx[0])) {
@@ -934,7 +1006,7 @@ var app = (function () {
     			if (dirty & /*correct*/ 8) correctmsg_changes.status = /*correct*/ ctx[3];
     			correctmsg.$set(correctmsg_changes);
 
-    			if (dirty & /*answers, handleAnswer*/ 18) {
+    			if (dirty & /*answers, handleAnswer, disableButtons*/ 50) {
     				each_value = /*answers*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
@@ -986,29 +1058,32 @@ var app = (function () {
     			if (detaching) detach_dev(section);
     			destroy_component(correctmsg);
     			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block$2.name,
     		type: "if",
-    		source: "(83:0) {#if !gameOver}",
+    		source: "(84:0) {#if !gameOver}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (90:12) {#each answers as answer}
+    // (94:12) {#each answers as answer}
     function create_each_block(ctx) {
     	let gamebutton;
     	let current;
 
     	gamebutton = new GameButton({
     			props: {
-    				label: /*answer*/ ctx[12],
-    				onPress: /*handleAnswer*/ ctx[4]
+    				label: /*answer*/ ctx[13],
+    				onPress: /*handleAnswer*/ ctx[5],
+    				disableButtons: /*disableButtons*/ ctx[4]
     			},
     			$$inline: true
     		});
@@ -1023,7 +1098,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const gamebutton_changes = {};
-    			if (dirty & /*answers*/ 2) gamebutton_changes.label = /*answer*/ ctx[12];
+    			if (dirty & /*answers*/ 2) gamebutton_changes.label = /*answer*/ ctx[13];
+    			if (dirty & /*disableButtons*/ 16) gamebutton_changes.disableButtons = /*disableButtons*/ ctx[4];
     			gamebutton.$set(gamebutton_changes);
     		},
     		i: function intro(local) {
@@ -1044,7 +1120,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(90:12) {#each answers as answer}",
+    		source: "(94:12) {#each answers as answer}",
     		ctx
     	});
 
@@ -1056,7 +1132,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$1, create_else_block];
+    	const if_block_creators = [create_if_block$2, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -1169,10 +1245,13 @@ var app = (function () {
     			$$invalidate(3, correct = "incorrect");
     		}
 
-    		nextQuestion();
+    		$$invalidate(4, disableButtons = true);
     	}
 
     	function nextQuestion() {
+    		$$invalidate(3, correct = null);
+    		$$invalidate(4, disableButtons = false);
+
     		if (newFishNames.length > 0) {
     			currFish = getNewFishName();
     			$$invalidate(0, fishURL = fishURLs[currFish]);
@@ -1186,13 +1265,14 @@ var app = (function () {
     		$$invalidate(2, gameOver = true);
     	}
 
-    	//Game Loop
+    	//Initialize game state
     	var currFish = getNewFishName();
 
     	var fishURL = fishURLs[currFish];
     	var answers = getAnswers(currFish);
     	var gameOver = false;
     	var correct = null;
+    	var disableButtons = false;
     	const writable_props = [];
 
     	Object_1.keys($$props).forEach(key => {
@@ -1220,7 +1300,8 @@ var app = (function () {
     		fishURL,
     		answers,
     		gameOver,
-    		correct
+    		correct,
+    		disableButtons
     	});
 
     	$$self.$inject_state = $$props => {
@@ -1231,13 +1312,22 @@ var app = (function () {
     		if ("answers" in $$props) $$invalidate(1, answers = $$props.answers);
     		if ("gameOver" in $$props) $$invalidate(2, gameOver = $$props.gameOver);
     		if ("correct" in $$props) $$invalidate(3, correct = $$props.correct);
+    		if ("disableButtons" in $$props) $$invalidate(4, disableButtons = $$props.disableButtons);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [fishURL, answers, gameOver, correct, handleAnswer];
+    	return [
+    		fishURL,
+    		answers,
+    		gameOver,
+    		correct,
+    		disableButtons,
+    		handleAnswer,
+    		nextQuestion
+    	];
     }
 
     class Game extends SvelteComponentDev {

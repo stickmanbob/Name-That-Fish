@@ -1,13 +1,14 @@
 <script>
     export let label;
     export let onPress;
+    export let disableButtons;
 </script>
 
 <div>
-    <!-- <button value={label} on:click={onPress}> </button>  -->
-    <i class="fas fa-dharmachakra" on:click={onPress} data-value={label}></i>
+    {#if !disableButtons}
+        <i class="fas fa-dharmachakra" on:click={onPress} data-value={label}></i>
+    {/if}
      <span>{label}</span>
-    
 </div>
 
 <style>
@@ -21,10 +22,6 @@
         cursor: pointer;
     }
 
-    button{
-        background-color: transparent;
-        border: none;
-    }
 
     div{
         display: flex;

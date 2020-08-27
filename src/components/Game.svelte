@@ -48,32 +48,33 @@ import CorrectMsg from "./CorrectMsg.svelte";
             correct = "incorrect"
         }
 
-        nextQuestion();
+        disableButtons = true;
     }
 
     function nextQuestion(){
-
+        correct = null;
+        disableButtons = false; 
         if(newFishNames.length > 0){
             currFish = getNewFishName();
             fishURL = fishURLs[currFish];
             answers = getAnswers(currFish);
         } else{
             youWin(); 
-        }
-         
+        }      
     }
 
     function youWin(){
         gameOver = true;
     }
 
-    //Game Loop
+    //Initialize game state
 
     var currFish = getNewFishName();
     var fishURL = fishURLs[currFish];
     var answers = getAnswers(currFish);
     var gameOver = false;
     var correct = null;
+    var disableButtons = false;
 
 
 </script>
@@ -86,9 +87,12 @@ import CorrectMsg from "./CorrectMsg.svelte";
         <img class="fish" src={fishURL} alt="A fish!">
         <CorrectMsg status={correct}/>
 
+
+        <button on:click={nextQuestion}>Next Fish!</button>
+
         <div class="answers">
             {#each answers as answer}
-                <GameButton label={answer} onPress={handleAnswer}/>
+                <GameButton label={answer} onPress={handleAnswer} disableButtons ={disableButtons}/>
             {/each}
             
         </div>
