@@ -31,6 +31,8 @@
 
     span{
         font-size: 20px;
+        line-height: 40px;
         font-weight: 600;
+        color: black;
     }
 </style>

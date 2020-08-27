@@ -4,7 +4,8 @@
     import fishURLs from "../fish.json";
     import GameButton from "./GameButton.svelte";
     import CorrectMSG from "./CorrectMsg.svelte";
-import CorrectMsg from "./CorrectMsg.svelte";
+    import GameOver from "./GameOver.svelte";
+    import CorrectMsg from "./CorrectMsg.svelte";
 
     let allFishNames = Object.keys(fishURLs);
 
@@ -13,7 +14,6 @@ import CorrectMsg from "./CorrectMsg.svelte";
     
     // Returns a new fish that we have not seen before
     // Used to select the next fish for guessing
-    
     function getNewFishName(){
         
         let newFishIdx = getRandomIndex(newFishNames)
@@ -39,18 +39,25 @@ import CorrectMsg from "./CorrectMsg.svelte";
         return shuffleArray(answers); 
     }
 
+    //Process the answer and update game state
     function handleAnswer(e){
         e.preventDefault();
         
         if (e.target.dataset.value === currFish){
             correct = "correct";
+            score +=1;
         } else{
             correct = "incorrect"
+            numAttempts -=1;
+            if (numAttempts === 0){
+                youLose();
+            }
         }
 
         disableButtons = true;
     }
 
+    // Load the next question
     function nextQuestion(){
         correct = null;
         disableButtons = false; 
@@ -65,6 +72,28 @@ import CorrectMsg from "./CorrectMsg.svelte";
 
     function youWin(){
         gameOver = true;
+        didWin = true;
+    }
+
+    function youLose(){
+        gameOver = true;
+        didWin = false; 
+    }
+
+    //Reset Game State
+    function resetGame(){
+        
+        allFishNames = Object.keys(fishURLs);
+        newFishNames = Array.from(allFishNames);
+        currFish = getNewFishName();
+        fishURL = fishURLs[currFish];
+        answers = getAnswers(currFish);
+        gameOver = false;
+        correct = null;
+        disableButtons = false;
+        score = 0;
+        numAttempts = 3;
+        didWin = false; 
     }
 
     //Initialize game state
@@ -75,8 +104,9 @@ import CorrectMsg from "./CorrectMsg.svelte";
     var gameOver = false;
     var correct = null;
     var disableButtons = false;
-
-
+    var score = 0;
+    var numAttempts = 3;
+    var didWin = false; 
 </script>
 
 <!-- Main Component -->
@@ -90,18 +120,23 @@ import CorrectMsg from "./CorrectMsg.svelte";
             <CorrectMsg status={correct}/>
             <button on:click={nextQuestion}>Next Fish!</button>
         {/if}
-        
-        <div class="answers">
-            {#each answers as answer}
-                <GameButton label={answer} onPress={handleAnswer} disableButtons ={disableButtons}/>
-            {/each}
-            
+
+        <div class="answer-box">
+            <img src="./assets/answerBox.png" alt="Answer box">
+            <div class="answers">
+                {#each answers as answer}
+                    <GameButton label={answer} onPress={handleAnswer} disableButtons ={disableButtons}/>
+                {/each} 
+            </div>
         </div>
+        
 
     </section>
     
 {:else}
-    <h1>YOU WIN!!!</h1>
+    
+        <GameOver reset={resetGame} didWin={didWin}/>
+    
 {/if}
 
 
@@ -110,18 +145,24 @@ import CorrectMsg from "./CorrectMsg.svelte";
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 40px;
     }
 
+    .answer-box{
+        position: relative;
+        margin-top: 50px;
+    }
+
+
     .answers{
-        /* width: 520px; */
+        position: absolute;
+        top: 10%;
+        left: 30%; 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        margin-top: 50px;
-        background:transparent url(../assets/answerBox.png);
-        background-size: cover;
-        padding: 10px 30px; 
+
     }
 
     
