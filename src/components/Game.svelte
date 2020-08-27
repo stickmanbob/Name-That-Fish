@@ -1,6 +1,6 @@
 <script>
 
-    import { getRandomIndex, shuffleArray } from "../util/util";
+    import { getRandomIndex, shuffleArray, sample } from "../util/util";
     import fishURLs from "../fish.json";
     import GameButton from "./GameButton.svelte";
     import CorrectMSG from "./CorrectMsg.svelte";
@@ -11,7 +11,7 @@
     //Initialize game state
     let allFishNames = Object.keys(fishURLs);
     console.log(fishURLs, allFishNames);
-    let newFishNames = Array.from(allFishNames);
+    let newFishNames = getFishSet(10);
     var questionsLeft = newFishNames.length;
     var questionNumber = 0;
     var currFish = getNewFishName();
@@ -23,6 +23,11 @@
     var score = 0;
     var numAttempts = 3;
     var didWin = false;
+
+    //Returns a sample of <size> fish as an array
+    function getFishSet(size){
+        return sample(allFishNames, size);
+    }
     
     
     // Returns a new fish that we have not seen before
@@ -98,7 +103,7 @@
     function resetGame(){
         
         allFishNames = Object.keys(fishURLs);
-        newFishNames = Array.from(allFishNames);
+        newFishNames = getFishSet(10);
         questionsLeft = newFishNames.length; 
         questionNumber = 0;
         currFish = getNewFishName();

@@ -28,4 +28,10 @@ export function shuffleArray(array) {
     return array; 
 }
 
+//Returns a random sample of size n from array
+export function sample(arr, n){
+    let shuffled = shuffleArray(arr);
+    return shuffled.slice(0,n);
+}
+
 // console.log(shuffle([1,2,3,4,5]));

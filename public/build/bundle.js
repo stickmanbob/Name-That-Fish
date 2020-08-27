@@ -485,6 +485,12 @@ var app = (function () {
         return array; 
     }
 
+    //Returns a random sample of size n from array
+    function sample(arr, n){
+        let shuffled = shuffleArray(arr);
+        return shuffled.slice(0,n);
+    }
+
     // console.log(shuffle([1,2,3,4,5]));
 
     var Clownfish = "./assets/fishPics/clownfish.jpg";
@@ -1432,11 +1438,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i];
+    	child_ctx[21] = list[i];
     	return child_ctx;
     }
 
-    // (149:0) {:else}
+    // (154:0) {:else}
     function create_else_block$2(ctx) {
     	let section;
     	let gameover;
@@ -1455,7 +1461,7 @@ var app = (function () {
     			section = element("section");
     			create_component(gameover.$$.fragment);
     			attr_dev(section, "class", "svelte-rbhhpr");
-    			add_location(section, file$5, 149, 8, 4090);
+    			add_location(section, file$5, 154, 8, 4209);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1486,14 +1492,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(149:0) {:else}",
+    		source: "(154:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:0) {#if !gameOver}
+    // (126:0) {#if !gameOver}
     function create_if_block$3(ctx) {
     	let section;
     	let img0;
@@ -1552,17 +1558,17 @@ var app = (function () {
     			attr_dev(img0, "class", "fish svelte-rbhhpr");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
-    			add_location(img0, file$5, 123, 8, 3295);
+    			add_location(img0, file$5, 128, 8, 3414);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
     			attr_dev(img1, "class", "svelte-rbhhpr");
-    			add_location(img1, file$5, 137, 12, 3719);
+    			add_location(img1, file$5, 142, 12, 3838);
     			attr_dev(div0, "class", "answers svelte-rbhhpr");
-    			add_location(div0, file$5, 138, 12, 3783);
+    			add_location(div0, file$5, 143, 12, 3902);
     			attr_dev(div1, "class", "answer-box svelte-rbhhpr");
-    			add_location(div1, file$5, 136, 8, 3682);
+    			add_location(div1, file$5, 141, 8, 3801);
     			attr_dev(section, "class", "svelte-rbhhpr");
-    			add_location(section, file$5, 122, 4, 3277);
+    			add_location(section, file$5, 127, 4, 3396);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1679,14 +1685,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(121:0) {#if !gameOver}",
+    		source: "(126:0) {#if !gameOver}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:8) {#if correct}
+    // (133:8) {#if correct}
     function create_if_block_1$2(ctx) {
     	let div;
     	let correctmsg;
@@ -1709,9 +1715,9 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Next Fish!";
     			attr_dev(button, "class", "svelte-rbhhpr");
-    			add_location(button, file$5, 130, 16, 3578);
+    			add_location(button, file$5, 135, 16, 3697);
     			attr_dev(div, "class", "result svelte-rbhhpr");
-    			add_location(div, file$5, 128, 12, 3494);
+    			add_location(div, file$5, 133, 12, 3613);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1751,23 +1757,23 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(128:8) {#if correct}",
+    		source: "(133:8) {#if correct}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (140:16) {#each answers as answer}
+    // (145:16) {#each answers as answer}
     function create_each_block(ctx) {
     	let gamebutton;
     	let current;
 
     	gamebutton = new GameButton({
     			props: {
-    				label: /*answer*/ ctx[20],
+    				label: /*answer*/ ctx[21],
     				onPress: /*handleAnswer*/ ctx[10],
-    				correctAns: /*currFish*/ ctx[2] === /*answer*/ ctx[20],
+    				correctAns: /*currFish*/ ctx[2] === /*answer*/ ctx[21],
     				disableButtons: /*disableButtons*/ ctx[7]
     			},
     			$$inline: true
@@ -1783,8 +1789,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const gamebutton_changes = {};
-    			if (dirty & /*answers*/ 16) gamebutton_changes.label = /*answer*/ ctx[20];
-    			if (dirty & /*currFish, answers*/ 20) gamebutton_changes.correctAns = /*currFish*/ ctx[2] === /*answer*/ ctx[20];
+    			if (dirty & /*answers*/ 16) gamebutton_changes.label = /*answer*/ ctx[21];
+    			if (dirty & /*currFish, answers*/ 20) gamebutton_changes.correctAns = /*currFish*/ ctx[2] === /*answer*/ ctx[21];
     			if (dirty & /*disableButtons*/ 128) gamebutton_changes.disableButtons = /*disableButtons*/ ctx[7];
     			gamebutton.$set(gamebutton_changes);
     		},
@@ -1806,7 +1812,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(140:16) {#each answers as answer}",
+    		source: "(145:16) {#each answers as answer}",
     		ctx
     	});
 
@@ -1896,7 +1902,7 @@ var app = (function () {
     function instance$5($$self, $$props, $$invalidate) {
     	let allFishNames = Object.keys(fishURLs);
     	console.log(fishURLs, allFishNames);
-    	let newFishNames = Array.from(allFishNames);
+    	let newFishNames = getFishSet(10);
     	var questionsLeft = newFishNames.length;
     	var questionNumber = 0;
     	var currFish = getNewFishName();
@@ -1908,6 +1914,11 @@ var app = (function () {
     	var score = 0;
     	var numAttempts = 3;
     	var didWin = false;
+
+    	//Returns a sample of <size> fish as an array
+    	function getFishSet(size) {
+    		return sample(allFishNames, size);
+    	}
 
     	// Returns a new fish that we have not seen before
     	// Used to select the next fish for guessing
@@ -1981,7 +1992,7 @@ var app = (function () {
     	//Reset Game State
     	function resetGame() {
     		allFishNames = Object.keys(fishURLs);
-    		newFishNames = Array.from(allFishNames);
+    		newFishNames = getFishSet(10);
     		$$invalidate(0, questionsLeft = newFishNames.length);
     		$$invalidate(1, questionNumber = 0);
     		$$invalidate(2, currFish = getNewFishName());
@@ -2007,6 +2018,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		getRandomIndex,
     		shuffleArray,
+    		sample,
     		fishURLs,
     		GameButton,
     		CorrectMSG: CorrectMsg,
@@ -2026,6 +2038,7 @@ var app = (function () {
     		score,
     		numAttempts,
     		didWin,
+    		getFishSet,
     		getNewFishName,
     		getAnswers,
     		handleAnswer,
