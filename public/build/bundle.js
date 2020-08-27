@@ -500,7 +500,7 @@ var app = (function () {
     	"Large Mouth Bass": "./assets/fishPics/largemouthbass.jpg",
     	Clownfish: Clownfish,
     	"Blue Tang": "./assets/fishPics/bluetang.jpg",
-    	"Angel Fish": "./assets/fishPics/anglerfish.jpg",
+    	"Angel Fish": "./assets/fishPics/angelfish.jpeg",
     	"Angler Fish": "./assets/fishPics/anglerfish.jpg",
     	"Butterfly Fish": "./assets/fishPics/butterflyfish.jpeg",
     	"Great White Shark": "./assets/fishPics/greatwhite.jpg",
