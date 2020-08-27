@@ -11,7 +11,8 @@
 <style>
 
     h1{
-        font-size: 40px;
+        font-size: 30px;
+        text-align: center;
     }
     h1.right{
         color:green;

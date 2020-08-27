@@ -6,12 +6,14 @@
     import CorrectMSG from "./CorrectMsg.svelte";
     import GameOver from "./GameOver.svelte";
     import CorrectMsg from "./CorrectMsg.svelte";
+    import Counter from "./Counter.svelte";
 
     //Initialize game state
     let allFishNames = Object.keys(fishURLs);
 
     let newFishNames = Array.from(allFishNames);
-
+    var questionsLeft = newFishNames.length;
+    var questionNumber = 0;
     var currFish = getNewFishName();
     var fishURL = fishURLs[currFish];
     var answers = getAnswers(currFish);
@@ -22,6 +24,7 @@
     var numAttempts = 3;
     var didWin = false;
     
+    
     // Returns a new fish that we have not seen before
     // Used to select the next fish for guessing
     function getNewFishName(){
@@ -30,6 +33,7 @@
         let newFish = newFishNames[newFishIdx];
         newFishNames.splice(newFishIdx,1);
         
+        questionNumber ++; 
         return newFish;
     }
 
@@ -95,6 +99,8 @@
         
         allFishNames = Object.keys(fishURLs);
         newFishNames = Array.from(allFishNames);
+        questionsLeft = newFishNames.length; 
+        questionNumber = 0;
         currFish = getNewFishName();
         fishURL = fishURLs[currFish];
         answers = getAnswers(currFish);
@@ -104,6 +110,7 @@
         score = 0;
         numAttempts = 3;
         didWin = false; 
+        
     }
 
      
@@ -117,15 +124,19 @@
         <img class="fish" src={fishURL} alt="A fish!">
         
         {#if correct}
-            <CorrectMsg status={correct}/>
-            <button on:click={nextQuestion}>Next Fish!</button>
+            <div class="result">
+                <CorrectMsg status={correct}/>
+                <button on:click={nextQuestion}>Next Fish!</button>
+            </div>
         {/if}
+
+        <Counter numAttempts={numAttempts} questionNumber={questionNumber} questionsLeft={questionsLeft} />
 
         <div class="answer-box">
             <img src="./assets/answerBox.png" alt="Answer box">
             <div class="answers">
                 {#each answers as answer}
-                    <GameButton label={answer} onPress={handleAnswer} disableButtons ={disableButtons}/>
+                    <GameButton label={answer} onPress={handleAnswer} correctAns={currFish === answer} disableButtons ={disableButtons}/>
                 {/each} 
             </div>
         </div>
@@ -152,7 +163,7 @@
 
     .answer-box{
         position: relative;
-        margin-top: 50px;
+        margin-top: 10px;
     }
 
     .answer-box img{
@@ -171,7 +182,12 @@
 
     }
 
-    
+    .result{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     img.fish{
         height:400px; 
