@@ -4,8 +4,28 @@ export function getRandomValue(array) {
     return array[idx];
 }
 
+// Returns a random index from and array
 export function getRandomIndex(array){
     return Math.floor(Math.random() * (array.length))
 }
 
-// console.log(getRandomValue([1,2,3,4,5]));
+//Shuffles an array
+export function shuffleArray(array) {
+    let currentIndex = array.length -1;
+
+    // while there are elements left to shuffle:
+    while(currentIndex !== 0){
+
+        // Pick and element to shuffle
+        let randomIndex = Math.floor(Math.random()*currentIndex);
+
+        // And swap it with this one
+        
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+
+        currentIndex --;
+    }
+    return array; 
+}
+
+// console.log(shuffle([1,2,3,4,5]));
