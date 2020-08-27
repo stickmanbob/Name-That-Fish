@@ -97,6 +97,7 @@ import CorrectMsg from "./CorrectMsg.svelte";
             {/each}
             
         </div>
+
     </section>
     
 {:else}
@@ -112,18 +113,21 @@ import CorrectMsg from "./CorrectMsg.svelte";
     }
 
     .answers{
-        width: 520px;
+        /* width: 520px; */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-top: 50px;
-        background:transparent url(https://img2.annthegran.com/PrintArt/XLarge/Great_Notions/pg52403.jpg);
+        background:transparent url(../assets/answerBox.png);
         background-size: cover;
         padding: 10px 30px; 
     }
 
+    
+
     img.fish{
         height:400px; 
+        max-width: 100%;
     }
 </style>

@@ -886,7 +886,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (102:0) {:else}
+    // (103:0) {:else}
     function create_else_block(ctx) {
     	let h1;
 
@@ -894,7 +894,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "YOU WIN!!!";
-    			add_location(h1, file$3, 102, 4, 2628);
+    			add_location(h1, file$3, 103, 4, 2629);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -911,7 +911,7 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(102:0) {:else}",
+    		source: "(103:0) {:else}",
     		ctx
     	});
 
@@ -953,13 +953,13 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img, "class", "fish svelte-4rocl7");
+    			attr_dev(img, "class", "fish svelte-19n6uv2");
     			if (img.src !== (img_src_value = /*fishURL*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "A fish!");
     			add_location(img, file$3, 86, 8, 2171);
-    			attr_dev(div, "class", "answers svelte-4rocl7");
+    			attr_dev(div, "class", "answers svelte-19n6uv2");
     			add_location(div, file$3, 93, 8, 2387);
-    			attr_dev(section, "class", "svelte-4rocl7");
+    			attr_dev(section, "class", "svelte-19n6uv2");
     			add_location(section, file$3, 85, 4, 2153);
     		},
     		m: function mount(target, anchor) {
@@ -1425,7 +1425,7 @@ var app = (function () {
     			create_component(header.$$.fragment);
     			t = space();
     			create_component(game.$$.fragment);
-    			attr_dev(main, "class", "svelte-gwrz94");
+    			attr_dev(main, "class", "svelte-1g52r5w");
     			add_location(main, file$4, 7, 0, 131);
     		},
     		l: function claim(nodes) {
