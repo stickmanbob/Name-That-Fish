@@ -85,11 +85,12 @@ import CorrectMsg from "./CorrectMsg.svelte";
 
     <section>
         <img class="fish" src={fishURL} alt="A fish!">
-        <CorrectMsg status={correct}/>
-
-
-        <button on:click={nextQuestion}>Next Fish!</button>
-
+        
+        {#if correct}
+            <CorrectMsg status={correct}/>
+            <button on:click={nextQuestion}>Next Fish!</button>
+        {/if}
+        
         <div class="answers">
             {#each answers as answer}
                 <GameButton label={answer} onPress={handleAnswer} disableButtons ={disableButtons}/>

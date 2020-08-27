@@ -886,7 +886,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (101:0) {:else}
+    // (102:0) {:else}
     function create_else_block(ctx) {
     	let h1;
 
@@ -894,7 +894,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "YOU WIN!!!";
-    			add_location(h1, file$3, 101, 4, 2569);
+    			add_location(h1, file$3, 102, 4, 2628);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -911,7 +911,7 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(101:0) {:else}",
+    		source: "(102:0) {:else}",
     		ctx
     	});
 
@@ -924,20 +924,10 @@ var app = (function () {
     	let img;
     	let img_src_value;
     	let t0;
-    	let correctmsg;
     	let t1;
-    	let button;
-    	let t3;
     	let div;
     	let current;
-    	let mounted;
-    	let dispose;
-
-    	correctmsg = new CorrectMsg({
-    			props: { status: /*correct*/ ctx[3] },
-    			$$inline: true
-    		});
-
+    	let if_block = /*correct*/ ctx[3] && create_if_block_1$1(ctx);
     	let each_value = /*answers*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -955,11 +945,8 @@ var app = (function () {
     			section = element("section");
     			img = element("img");
     			t0 = space();
-    			create_component(correctmsg.$$.fragment);
+    			if (if_block) if_block.c();
     			t1 = space();
-    			button = element("button");
-    			button.textContent = "Next Fish!";
-    			t3 = space();
     			div = element("div");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -970,9 +957,8 @@ var app = (function () {
     			if (img.src !== (img_src_value = /*fishURL*/ ctx[0])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "A fish!");
     			add_location(img, file$3, 86, 8, 2171);
-    			add_location(button, file$3, 90, 8, 2267);
     			attr_dev(div, "class", "answers svelte-4rocl7");
-    			add_location(div, file$3, 92, 8, 2328);
+    			add_location(div, file$3, 93, 8, 2387);
     			attr_dev(section, "class", "svelte-4rocl7");
     			add_location(section, file$3, 85, 4, 2153);
     		},
@@ -980,10 +966,8 @@ var app = (function () {
     			insert_dev(target, section, anchor);
     			append_dev(section, img);
     			append_dev(section, t0);
-    			mount_component(correctmsg, section, null);
+    			if (if_block) if_block.m(section, null);
     			append_dev(section, t1);
-    			append_dev(section, button);
-    			append_dev(section, t3);
     			append_dev(section, div);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -991,20 +975,34 @@ var app = (function () {
     			}
 
     			current = true;
-
-    			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*nextQuestion*/ ctx[6], false, false, false);
-    				mounted = true;
-    			}
     		},
     		p: function update(ctx, dirty) {
     			if (!current || dirty & /*fishURL*/ 1 && img.src !== (img_src_value = /*fishURL*/ ctx[0])) {
     				attr_dev(img, "src", img_src_value);
     			}
 
-    			const correctmsg_changes = {};
-    			if (dirty & /*correct*/ 8) correctmsg_changes.status = /*correct*/ ctx[3];
-    			correctmsg.$set(correctmsg_changes);
+    			if (/*correct*/ ctx[3]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*correct*/ 8) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(section, t1);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
 
     			if (dirty & /*answers, handleAnswer, disableButtons*/ 50) {
     				each_value = /*answers*/ ctx[1];
@@ -1036,7 +1034,7 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(correctmsg.$$.fragment, local);
+    			transition_in(if_block);
 
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
@@ -1045,7 +1043,7 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(correctmsg.$$.fragment, local);
+    			transition_out(if_block);
     			each_blocks = each_blocks.filter(Boolean);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1056,10 +1054,8 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
-    			destroy_component(correctmsg);
+    			if (if_block) if_block.d();
     			destroy_each(each_blocks, detaching);
-    			mounted = false;
-    			dispose();
     		}
     	};
 
@@ -1074,7 +1070,74 @@ var app = (function () {
     	return block;
     }
 
-    // (94:12) {#each answers as answer}
+    // (89:8) {#if correct}
+    function create_if_block_1$1(ctx) {
+    	let correctmsg;
+    	let t0;
+    	let button;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	correctmsg = new CorrectMsg({
+    			props: { status: /*correct*/ ctx[3] },
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(correctmsg.$$.fragment);
+    			t0 = space();
+    			button = element("button");
+    			button.textContent = "Next Fish!";
+    			add_location(button, file$3, 90, 12, 2304);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(correctmsg, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, button, anchor);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*nextQuestion*/ ctx[6], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			const correctmsg_changes = {};
+    			if (dirty & /*correct*/ 8) correctmsg_changes.status = /*correct*/ ctx[3];
+    			correctmsg.$set(correctmsg_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(correctmsg.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(correctmsg.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(correctmsg, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(89:8) {#if correct}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (95:12) {#each answers as answer}
     function create_each_block(ctx) {
     	let gamebutton;
     	let current;
@@ -1120,7 +1183,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(94:12) {#each answers as answer}",
+    		source: "(95:12) {#each answers as answer}",
     		ctx
     	});
 
