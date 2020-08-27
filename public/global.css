@@ -4,11 +4,16 @@ html, body {
 	height: 100%;
 }
 
+@font-face{
+	font-family: pirate-sans;
+	src:url(./assets/PirateTreasureDemo-4B3MB.otf);
+}
+
 body {
 	color: #333;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: pirate-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 
@@ -61,3 +66,4 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
