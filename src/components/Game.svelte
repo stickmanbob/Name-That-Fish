@@ -123,6 +123,8 @@
     <section>
         <img class="fish" src={fishURL} alt="A fish!">
         
+        <Counter numAttempts={numAttempts} questionNumber={questionNumber} questionsLeft={questionsLeft} />
+
         {#if correct}
             <div class="result">
                 <CorrectMsg status={correct}/>
@@ -130,7 +132,7 @@
             </div>
         {/if}
 
-        <Counter numAttempts={numAttempts} questionNumber={questionNumber} questionsLeft={questionsLeft} />
+        
 
         <div class="answer-box">
             <img src="./assets/answerBox.png" alt="Answer box">
@@ -168,18 +170,22 @@
 
     .answer-box img{
         box-sizing: border-box;
+
+        width: 650px;
+        height: 200px;
     }
 
 
     .answers{
         position: absolute;
-        top: 10%;
-        left: 30%; 
-        display: flex;
+        top: 15%;
+        left: 8%; 
+        /* display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
-
+        justify-content: center; */
+        column-count: 2;
+        width: fit-content;
     }
 
     .result{
@@ -187,6 +193,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .result button{
+        margin-bottom: 0px;
     }
 
     img.fish{
@@ -204,7 +214,7 @@
         }
         .answer-box img{
             width: 360px;
-            height: 300px;
+            height: 225px;
         }
 
         img.fish{
@@ -214,14 +224,18 @@
         }
 
         .answers{
-            left:20%;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start ;
+            left:10%;
+            top: 10%;
         }
     }
 
     @media (max-width: 321px){
         .answer-box img{
             width: 320px;
-            height: 300px;
+            height: 225px;
         }
 
         img.fish{

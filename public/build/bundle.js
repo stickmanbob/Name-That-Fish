@@ -505,7 +505,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			i = element("i");
-    			attr_dev(i, "class", "fas fa-times incorrect svelte-vdauwo");
+    			attr_dev(i, "class", "fas fa-times incorrect svelte-x6rn8g");
     			add_location(i, file$1, 18, 12, 400);
     		},
     		m: function mount(target, anchor) {
@@ -535,7 +535,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			i = element("i");
-    			attr_dev(i, "class", "fas fa-check-circle correct svelte-vdauwo");
+    			attr_dev(i, "class", "fas fa-check-circle correct svelte-x6rn8g");
     			add_location(i, file$1, 16, 12, 328);
     		},
     		m: function mount(target, anchor) {
@@ -567,7 +567,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			i = element("i");
-    			attr_dev(i, "class", "fas fa-dharmachakra svelte-vdauwo");
+    			attr_dev(i, "class", "fas fa-dharmachakra svelte-x6rn8g");
     			attr_dev(i, "data-value", /*label*/ ctx[0]);
     			add_location(i, file$1, 13, 8, 205);
     		},
@@ -636,9 +636,9 @@ var app = (function () {
     			t0 = space();
     			span = element("span");
     			t1 = text(/*label*/ ctx[0]);
-    			attr_dev(span, "class", "svelte-vdauwo");
+    			attr_dev(span, "class", "svelte-x6rn8g");
     			add_location(span, file$1, 22, 5, 477);
-    			attr_dev(div, "class", "svelte-vdauwo");
+    			attr_dev(div, "class", "svelte-x6rn8g");
     			add_location(div, file$1, 11, 0, 165);
     		},
     		l: function claim(nodes) {
@@ -811,7 +811,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "SWAB THE DECK!";
-    			attr_dev(h1, "class", "wrong svelte-k5qyh4");
+    			attr_dev(h1, "class", "wrong svelte-1xytm16");
     			add_location(h1, file$2, 7, 4, 153);
     		},
     		m: function mount(target, anchor) {
@@ -841,7 +841,7 @@ var app = (function () {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "GREAT JOB, MATEY!";
-    			attr_dev(h1, "class", "right svelte-k5qyh4");
+    			attr_dev(h1, "class", "right svelte-1xytm16");
     			add_location(h1, file$2, 5, 4, 74);
     		},
     		m: function mount(target, anchor) {
@@ -990,15 +990,15 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Shiver Me Timbers, yer fish knowledge needs some haulin'!";
+    			h1.textContent = "Thunderin' Typhoons, yer fish knowledge needs some hoistin'!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "svelte-1hnq0gg");
-    			add_location(h1, file$3, 11, 8, 200);
+    			attr_dev(h1, "class", "lose svelte-adtwxy");
+    			add_location(h1, file$3, 11, 8, 218);
     			if (img.src !== (img_src_value = "./assets/lose.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-1hnq0gg");
-    			add_location(img, file$3, 12, 8, 275);
+    			attr_dev(img, "class", "svelte-adtwxy");
+    			add_location(img, file$3, 12, 8, 309);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -1033,15 +1033,15 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Congrats Matey, you win!";
+    			h1.textContent = "Hats off to ye Matey, you win!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "svelte-1hnq0gg");
+    			attr_dev(h1, "class", "win svelte-adtwxy");
     			add_location(h1, file$3, 8, 8, 102);
     			if (img.src !== (img_src_value = "./assets/win.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-1hnq0gg");
-    			add_location(img, file$3, 9, 8, 144);
+    			attr_dev(img, "class", "svelte-adtwxy");
+    			add_location(img, file$3, 9, 8, 162);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -1088,9 +1088,9 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Play Again!";
-    			attr_dev(button, "class", "svelte-1hnq0gg");
-    			add_location(button, file$3, 14, 4, 326);
-    			attr_dev(div, "class", "svelte-1hnq0gg");
+    			attr_dev(button, "class", "svelte-adtwxy");
+    			add_location(button, file$3, 14, 4, 360);
+    			attr_dev(div, "class", "svelte-adtwxy");
     			add_location(div, file$3, 6, 0, 71);
     		},
     		l: function claim(nodes) {
@@ -1413,7 +1413,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (147:0) {:else}
+    // (149:0) {:else}
     function create_else_block$2(ctx) {
     	let section;
     	let gameover;
@@ -1431,8 +1431,8 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-t7iys9");
-    			add_location(section, file$5, 147, 8, 4040);
+    			attr_dev(section, "class", "svelte-3e2euq");
+    			add_location(section, file$5, 149, 8, 4050);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1463,7 +1463,7 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(147:0) {:else}",
+    		source: "(149:0) {:else}",
     		ctx
     	});
 
@@ -1476,8 +1476,8 @@ var app = (function () {
     	let img0;
     	let img0_src_value;
     	let t0;
-    	let t1;
     	let counter;
+    	let t1;
     	let t2;
     	let div1;
     	let img1;
@@ -1485,7 +1485,6 @@ var app = (function () {
     	let t3;
     	let div0;
     	let current;
-    	let if_block = /*correct*/ ctx[6] && create_if_block_1$2(ctx);
 
     	counter = new Counter({
     			props: {
@@ -1496,6 +1495,7 @@ var app = (function () {
     			$$inline: true
     		});
 
+    	let if_block = /*correct*/ ctx[6] && create_if_block_1$2(ctx);
     	let each_value = /*answers*/ ctx[4];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -1513,9 +1513,9 @@ var app = (function () {
     			section = element("section");
     			img0 = element("img");
     			t0 = space();
-    			if (if_block) if_block.c();
-    			t1 = space();
     			create_component(counter.$$.fragment);
+    			t1 = space();
+    			if (if_block) if_block.c();
     			t2 = space();
     			div1 = element("div");
     			img1 = element("img");
@@ -1526,28 +1526,28 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-t7iys9");
+    			attr_dev(img0, "class", "fish svelte-3e2euq");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
     			add_location(img0, file$5, 123, 8, 3255);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			attr_dev(img1, "class", "svelte-t7iys9");
-    			add_location(img1, file$5, 135, 12, 3669);
-    			attr_dev(div0, "class", "answers svelte-t7iys9");
-    			add_location(div0, file$5, 136, 12, 3733);
-    			attr_dev(div1, "class", "answer-box svelte-t7iys9");
-    			add_location(div1, file$5, 134, 8, 3632);
-    			attr_dev(section, "class", "svelte-t7iys9");
+    			attr_dev(img1, "class", "svelte-3e2euq");
+    			add_location(img1, file$5, 137, 12, 3679);
+    			attr_dev(div0, "class", "answers svelte-3e2euq");
+    			add_location(div0, file$5, 138, 12, 3743);
+    			attr_dev(div1, "class", "answer-box svelte-3e2euq");
+    			add_location(div1, file$5, 136, 8, 3642);
+    			attr_dev(section, "class", "svelte-3e2euq");
     			add_location(section, file$5, 122, 4, 3237);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
     			append_dev(section, img0);
     			append_dev(section, t0);
-    			if (if_block) if_block.m(section, null);
-    			append_dev(section, t1);
     			mount_component(counter, section, null);
+    			append_dev(section, t1);
+    			if (if_block) if_block.m(section, null);
     			append_dev(section, t2);
     			append_dev(section, div1);
     			append_dev(div1, img1);
@@ -1565,6 +1565,12 @@ var app = (function () {
     				attr_dev(img0, "src", img0_src_value);
     			}
 
+    			const counter_changes = {};
+    			if (dirty & /*numAttempts*/ 256) counter_changes.numAttempts = /*numAttempts*/ ctx[8];
+    			if (dirty & /*questionNumber*/ 2) counter_changes.questionNumber = /*questionNumber*/ ctx[1];
+    			if (dirty & /*questionsLeft*/ 1) counter_changes.questionsLeft = /*questionsLeft*/ ctx[0];
+    			counter.$set(counter_changes);
+
     			if (/*correct*/ ctx[6]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
@@ -1576,7 +1582,7 @@ var app = (function () {
     					if_block = create_if_block_1$2(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(section, t1);
+    					if_block.m(section, t2);
     				}
     			} else if (if_block) {
     				group_outros();
@@ -1587,12 +1593,6 @@ var app = (function () {
 
     				check_outros();
     			}
-
-    			const counter_changes = {};
-    			if (dirty & /*numAttempts*/ 256) counter_changes.numAttempts = /*numAttempts*/ ctx[8];
-    			if (dirty & /*questionNumber*/ 2) counter_changes.questionNumber = /*questionNumber*/ ctx[1];
-    			if (dirty & /*questionsLeft*/ 1) counter_changes.questionsLeft = /*questionsLeft*/ ctx[0];
-    			counter.$set(counter_changes);
 
     			if (dirty & /*answers, handleAnswer, currFish, disableButtons*/ 1172) {
     				each_value = /*answers*/ ctx[4];
@@ -1624,8 +1624,8 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block);
     			transition_in(counter.$$.fragment, local);
+    			transition_in(if_block);
 
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
@@ -1634,8 +1634,8 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block);
     			transition_out(counter.$$.fragment, local);
+    			transition_out(if_block);
     			each_blocks = each_blocks.filter(Boolean);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1646,8 +1646,8 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
-    			if (if_block) if_block.d();
     			destroy_component(counter);
+    			if (if_block) if_block.d();
     			destroy_each(each_blocks, detaching);
     		}
     	};
@@ -1663,7 +1663,7 @@ var app = (function () {
     	return block;
     }
 
-    // (126:8) {#if correct}
+    // (128:8) {#if correct}
     function create_if_block_1$2(ctx) {
     	let div;
     	let correctmsg;
@@ -1685,9 +1685,10 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Next Fish!";
-    			add_location(button, file$5, 128, 16, 3429);
-    			attr_dev(div, "class", "result svelte-t7iys9");
-    			add_location(div, file$5, 126, 12, 3345);
+    			attr_dev(button, "class", "svelte-3e2euq");
+    			add_location(button, file$5, 130, 16, 3538);
+    			attr_dev(div, "class", "result svelte-3e2euq");
+    			add_location(div, file$5, 128, 12, 3454);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1727,14 +1728,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(126:8) {#if correct}",
+    		source: "(128:8) {#if correct}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (138:16) {#each answers as answer}
+    // (140:16) {#each answers as answer}
     function create_each_block(ctx) {
     	let gamebutton;
     	let current;
@@ -1782,7 +1783,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(138:16) {#each answers as answer}",
+    		source: "(140:16) {#each answers as answer}",
     		ctx
     	});
 

@@ -58,4 +58,28 @@ import { afterUpdate } from "svelte";
         font-weight: 600;
         color: black;
     }
+
+    @media(max-width: 450px){
+        i{
+            font-size: 28px;
+
+        }
+
+         i.correct{
+            font-size: 30px;
+        }
+
+        i.incorrect{
+            font-size: 32px;
+        }
+
+        span{
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        div{
+            padding: 5px 0px;
+        }
+    }
 </style>

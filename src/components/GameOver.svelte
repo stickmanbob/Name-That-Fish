@@ -6,10 +6,10 @@
 
 <div>
     {#if didWin}
-        <h1>Congrats Matey, you win!</h1>
+        <h1 class="win">Hats off to ye Matey, you win!</h1>
         <img src="./assets/win.gif" alt="">
     {:else}
-        <h1>Shiver Me Timbers, yer fish knowledge needs some haulin'!</h1>
+        <h1 class='lose'>Thunderin' Typhoons, yer fish knowledge needs some hoistin'!</h1>
         <img src="./assets/lose.gif" alt="">
     {/if}
     <button on:click={reset}>Play Again!</button>
@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    max-width: 700px;
     border: 2px solid black;
     border-radius: 6px;
     padding: 10px 20px;
@@ -36,6 +36,17 @@
         font-size: 36px;
         color:black; 
         font-weight: 600;
+        text-align: center;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+
+    h1.win{
+        color: green;
+    }
+
+    h1.lose{
+        color:red;
     }
 
     button{

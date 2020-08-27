@@ -13,6 +13,7 @@
     h1{
         font-size: 30px;
         text-align: center;
+        margin-bottom: 5px;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;
     }
