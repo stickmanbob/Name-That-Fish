@@ -6,7 +6,12 @@
     header{
         display: flex;
         justify-content: center;
-        width: 100%;
+        margin-top: 10px;
+
+        border: 4px solid black;
+        background-color: blue;
+        padding:8px 20px;
+        border-radius: 6px;
     }
 
     h1{

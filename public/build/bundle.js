@@ -394,9 +394,9 @@ var app = (function () {
     			header = element("header");
     			h1 = element("h1");
     			h1.textContent = "Name that Fish!";
-    			attr_dev(h1, "class", "svelte-1a1r5zi");
+    			attr_dev(h1, "class", "svelte-srudon");
     			add_location(h1, file, 1, 4, 13);
-    			attr_dev(header, "class", "svelte-1a1r5zi");
+    			attr_dev(header, "class", "svelte-srudon");
     			add_location(header, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -1178,7 +1178,7 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-wntfzb");
+    			attr_dev(section, "class", "svelte-alo2ic");
     			add_location(section, file$4, 136, 8, 3606);
     		},
     		m: function mount(target, anchor) {
@@ -1259,18 +1259,19 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-wntfzb");
+    			attr_dev(img0, "class", "fish svelte-alo2ic");
     			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[0])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
     			add_location(img0, file$4, 116, 8, 3023);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
+    			attr_dev(img1, "class", "svelte-alo2ic");
     			add_location(img1, file$4, 124, 12, 3268);
-    			attr_dev(div0, "class", "answers svelte-wntfzb");
+    			attr_dev(div0, "class", "answers svelte-alo2ic");
     			add_location(div0, file$4, 125, 12, 3332);
-    			attr_dev(div1, "class", "answer-box svelte-wntfzb");
+    			attr_dev(div1, "class", "answer-box svelte-alo2ic");
     			add_location(div1, file$4, 123, 8, 3231);
-    			attr_dev(section, "class", "svelte-wntfzb");
+    			attr_dev(section, "class", "svelte-alo2ic");
     			add_location(section, file$4, 115, 4, 3005);
     		},
     		m: function mount(target, anchor) {

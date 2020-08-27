@@ -155,6 +155,10 @@
         margin-top: 50px;
     }
 
+    .answer-box img{
+        box-sizing: border-box;
+    }
+
 
     .answers{
         position: absolute;
@@ -176,5 +180,30 @@
         border: 8px solid black;
         border-radius: 6px;
         background-color: gray;
+    }
+
+    @media (max-width: 450px){
+        .answer-box img{
+            width: 360px;
+            height: 400px;
+        }
+
+        img.fish{
+            width: 360px;
+            box-sizing: border-box;
+            height: initial;
+        }
+    }
+
+    @media (max-width: 321px){
+        .answer-box img{
+            width: 320px;
+            height: 300px;
+        }
+
+        img.fish{
+            width: 320px; 
+            height: initial;
+        }
     }
 </style>
