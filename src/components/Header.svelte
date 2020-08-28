@@ -22,6 +22,7 @@
         margin-top: 5px;
         font-size: 48px;
         font-weight: 600;
+        /* color: whitesmoke; */
         color: whitesmoke;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;

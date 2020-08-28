@@ -740,9 +740,9 @@ var app = (function () {
     			header = element("header");
     			h1 = element("h1");
     			h1.textContent = "Name that Fish!";
-    			attr_dev(h1, "class", "svelte-p8czvr");
+    			attr_dev(h1, "class", "svelte-gxd0yx");
     			add_location(h1, file, 1, 4, 13);
-    			attr_dev(header, "class", "svelte-p8czvr");
+    			attr_dev(header, "class", "svelte-gxd0yx");
     			add_location(header, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
