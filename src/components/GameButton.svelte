@@ -9,9 +9,9 @@ import { afterUpdate } from "svelte";
 
 </script>
 
-<div>
+<div class={disableButtons ? "" : "hover"} on:click={ disableButtons ? "" : onPress} data-value={label} >
     {#if !disableButtons}
-        <i class="fas fa-dharmachakra" on:click={onPress} data-value={label}></i>
+        <i class="fas fa-dharmachakra" data-value={label} ></i>
     {:else}
         {#if correctAns}
             <i class="fas fa-check-circle correct"></i>
@@ -20,7 +20,7 @@ import { afterUpdate } from "svelte";
         
         {/if}
     {/if}
-     <span>{label}</span>
+     <span data-value={label}>{label}</span>
 </div>
 
 <style>
@@ -28,11 +28,6 @@ import { afterUpdate } from "svelte";
         font-size: 40px;
         color: rgb(92, 53, 53);
         padding-right: 5px;
-    }
-
-    i.fa-dharmachakra:hover{
-        color: black;
-        cursor: pointer;
     }
 
     i.correct{
@@ -50,6 +45,18 @@ import { afterUpdate } from "svelte";
         display: flex;
         align-items: center;
         padding: 10px 0px;
+    }
+
+    div.hover{
+        cursor:pointer;
+    }
+
+    div.hover:hover span{
+        color:green;
+    }
+
+    div.hover:hover i{
+        color: black;
     }
 
     span{

@@ -13,7 +13,8 @@
 
     //Initialize game state
     let allFishNames = Object.keys(fishURLs);
-    let newFishNames = getFishSet(10);
+    let gameLength = 10
+    let newFishNames = getFishSet(gameLength);
     var questionsLeft = newFishNames.length;
     var questionNumber = 0;
     var currFish = getNewFishName();
@@ -158,6 +159,8 @@
         <GameOver reset={resetGame} 
             didWin={didWin}
             returnToMenu={returnToMenu}
+            correctFish={score}
+            totalFish={gameLength}
         />
         </section>
     

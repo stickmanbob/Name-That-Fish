@@ -2,17 +2,21 @@
     export let didWin;
     export let reset; 
     export let returnToMenu; 
-    
+    export let correctFish
+    export let totalFish
 </script>
 
 <div>
     {#if didWin}
         <h1 class="win">Hats off to ye Matey, you win!</h1>
+        
         <img src="./assets/win.gif" alt="">
     {:else}
         <h1 class='lose'>Thunderin' Typhoons, yer fish knowledge needs some hoistin'!</h1>
+        
         <img src="./assets/lose.gif" alt="">
     {/if}
+    <span>You got {correctFish} / {totalFish} right</span>
     <button on:click={reset}>Play Again!</button>
     <button on:click={returnToMenu}>Back to the Bridge!</button>
 </div>
@@ -74,6 +78,11 @@
     button:active{
         position:relative;
 	    top:1px;
+    }
+
+    span{
+        margin-top: 10px;
+        font-size: 16px;
     }
     @media (max-width: 450px){
 
