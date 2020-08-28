@@ -5,7 +5,7 @@
 {#if status === 'correct'}
     <h1 class="right">GREAT JOB, MATEY!</h1>
 {:else if status === 'incorrect'}
-    <h1 class="wrong">SWAB THE DECK!</h1>
+    <h1 class="wrong">WALK THE PLANK!</h1>
 {/if}
 
 <style>

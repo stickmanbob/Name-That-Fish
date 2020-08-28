@@ -1,5 +1,7 @@
 <script>
 
+    export let returnToMenu; 
+
     import { getRandomIndex, shuffleArray, sample } from "../util/util";
     import fishURLs from "../fish.json";
     import GameButton from "./GameButton.svelte";
@@ -153,7 +155,10 @@
     
 {:else}
         <section in:fly={{ y: 200, duration: 2000 }} out:fade>
-        <GameOver reset={resetGame} didWin={didWin}/>
+        <GameOver reset={resetGame} 
+            didWin={didWin}
+            returnToMenu={returnToMenu}
+        />
         </section>
     
 {/if}
@@ -218,6 +223,7 @@
     @media (max-width: 450px){
         section{
             margin-top: 10px;
+            min-height: 720px;
         }
         .answer-box img{
             width: 360px;

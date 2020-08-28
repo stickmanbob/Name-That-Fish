@@ -1,8 +1,11 @@
 <script>
     export let startGame;
+    export let viewInstructions;
+    
+    import { fade } from 'svelte/transition';
 </script>
 
-<section>
+<section in:fade>
 
     <h1>
         Welcome to Name That Fish!
@@ -14,7 +17,7 @@
         Start Game!
     </button>
 
-    <button class="menu-button">
+    <button class="menu-button" on:click={viewInstructions}>
         View Instructions
     </button>
 

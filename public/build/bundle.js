@@ -1174,7 +1174,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "SWAB THE DECK!";
+    			h1.textContent = "WALK THE PLANK!";
     			attr_dev(h1, "class", "wrong svelte-1xytm16");
     			add_location(h1, file$2, 7, 4, 153);
     		},
@@ -1344,7 +1344,7 @@ var app = (function () {
 
     const file$3 = "src/components/GameOver.svelte";
 
-    // (11:4) {:else}
+    // (12:4) {:else}
     function create_else_block$1(ctx) {
     	let h1;
     	let t1;
@@ -1357,12 +1357,12 @@ var app = (function () {
     			h1.textContent = "Thunderin' Typhoons, yer fish knowledge needs some hoistin'!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "lose svelte-adtwxy");
-    			add_location(h1, file$3, 11, 8, 218);
+    			attr_dev(h1, "class", "lose svelte-g2f18n");
+    			add_location(h1, file$3, 12, 8, 248);
     			if (img.src !== (img_src_value = "./assets/lose.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-adtwxy");
-    			add_location(img, file$3, 12, 8, 309);
+    			attr_dev(img, "class", "svelte-g2f18n");
+    			add_location(img, file$3, 13, 8, 339);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -1380,14 +1380,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(11:4) {:else}",
+    		source: "(12:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (8:4) {#if didWin}
+    // (9:4) {#if didWin}
     function create_if_block$2(ctx) {
     	let h1;
     	let t1;
@@ -1400,12 +1400,12 @@ var app = (function () {
     			h1.textContent = "Hats off to ye Matey, you win!";
     			t1 = space();
     			img = element("img");
-    			attr_dev(h1, "class", "win svelte-adtwxy");
-    			add_location(h1, file$3, 8, 8, 102);
+    			attr_dev(h1, "class", "win svelte-g2f18n");
+    			add_location(h1, file$3, 9, 8, 132);
     			if (img.src !== (img_src_value = "./assets/win.gif")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "");
-    			attr_dev(img, "class", "svelte-adtwxy");
-    			add_location(img, file$3, 9, 8, 162);
+    			attr_dev(img, "class", "svelte-g2f18n");
+    			add_location(img, file$3, 10, 8, 192);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -1423,7 +1423,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(8:4) {#if didWin}",
+    		source: "(9:4) {#if didWin}",
     		ctx
     	});
 
@@ -1433,7 +1433,9 @@ var app = (function () {
     function create_fragment$3(ctx) {
     	let div;
     	let t0;
-    	let button;
+    	let button0;
+    	let t2;
+    	let button1;
     	let mounted;
     	let dispose;
 
@@ -1450,12 +1452,17 @@ var app = (function () {
     			div = element("div");
     			if_block.c();
     			t0 = space();
-    			button = element("button");
-    			button.textContent = "Play Again!";
-    			attr_dev(button, "class", "svelte-adtwxy");
-    			add_location(button, file$3, 14, 4, 360);
-    			attr_dev(div, "class", "svelte-adtwxy");
-    			add_location(div, file$3, 6, 0, 71);
+    			button0 = element("button");
+    			button0.textContent = "Play Again!";
+    			t2 = space();
+    			button1 = element("button");
+    			button1.textContent = "Back to the Bridge!";
+    			attr_dev(button0, "class", "svelte-g2f18n");
+    			add_location(button0, file$3, 15, 4, 390);
+    			attr_dev(button1, "class", "svelte-g2f18n");
+    			add_location(button1, file$3, 16, 4, 440);
+    			attr_dev(div, "class", "svelte-g2f18n");
+    			add_location(div, file$3, 7, 0, 101);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1464,19 +1471,33 @@ var app = (function () {
     			insert_dev(target, div, anchor);
     			if_block.m(div, null);
     			append_dev(div, t0);
-    			append_dev(div, button);
+    			append_dev(div, button0);
+    			append_dev(div, t2);
+    			append_dev(div, button1);
 
     			if (!mounted) {
-    				dispose = listen_dev(
-    					button,
-    					"click",
-    					function () {
-    						if (is_function(/*reset*/ ctx[1])) /*reset*/ ctx[1].apply(this, arguments);
-    					},
-    					false,
-    					false,
-    					false
-    				);
+    				dispose = [
+    					listen_dev(
+    						button0,
+    						"click",
+    						function () {
+    							if (is_function(/*reset*/ ctx[1])) /*reset*/ ctx[1].apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					listen_dev(
+    						button1,
+    						"click",
+    						function () {
+    							if (is_function(/*returnToMenu*/ ctx[2])) /*returnToMenu*/ ctx[2].apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					)
+    				];
 
     				mounted = true;
     			}
@@ -1500,7 +1521,7 @@ var app = (function () {
     			if (detaching) detach_dev(div);
     			if_block.d();
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -1518,7 +1539,8 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let { didWin } = $$props;
     	let { reset } = $$props;
-    	const writable_props = ["didWin", "reset"];
+    	let { returnToMenu } = $$props;
+    	const writable_props = ["didWin", "reset", "returnToMenu"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<GameOver> was created with unknown prop '${key}'`);
@@ -1530,26 +1552,28 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ("didWin" in $$props) $$invalidate(0, didWin = $$props.didWin);
     		if ("reset" in $$props) $$invalidate(1, reset = $$props.reset);
+    		if ("returnToMenu" in $$props) $$invalidate(2, returnToMenu = $$props.returnToMenu);
     	};
 
-    	$$self.$capture_state = () => ({ didWin, reset });
+    	$$self.$capture_state = () => ({ didWin, reset, returnToMenu });
 
     	$$self.$inject_state = $$props => {
     		if ("didWin" in $$props) $$invalidate(0, didWin = $$props.didWin);
     		if ("reset" in $$props) $$invalidate(1, reset = $$props.reset);
+    		if ("returnToMenu" in $$props) $$invalidate(2, returnToMenu = $$props.returnToMenu);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [didWin, reset];
+    	return [didWin, reset, returnToMenu];
     }
 
     class GameOver extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { didWin: 0, reset: 1 });
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { didWin: 0, reset: 1, returnToMenu: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1568,6 +1592,10 @@ var app = (function () {
     		if (/*reset*/ ctx[1] === undefined && !("reset" in props)) {
     			console.warn("<GameOver> was created without expected prop 'reset'");
     		}
+
+    		if (/*returnToMenu*/ ctx[2] === undefined && !("returnToMenu" in props)) {
+    			console.warn("<GameOver> was created without expected prop 'returnToMenu'");
+    		}
     	}
 
     	get didWin() {
@@ -1583,6 +1611,14 @@ var app = (function () {
     	}
 
     	set reset(value) {
+    		throw new Error("<GameOver>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get returnToMenu() {
+    		throw new Error("<GameOver>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set returnToMenu(value) {
     		throw new Error("<GameOver>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -1802,11 +1838,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[22] = list[i];
     	return child_ctx;
     }
 
-    // (154:0) {:else}
+    // (156:0) {:else}
     function create_else_block$2(ctx) {
     	let section;
     	let gameover;
@@ -1816,8 +1852,9 @@ var app = (function () {
 
     	gameover = new GameOver({
     			props: {
-    				reset: /*resetGame*/ ctx[12],
-    				didWin: /*didWin*/ ctx[9]
+    				reset: /*resetGame*/ ctx[13],
+    				didWin: /*didWin*/ ctx[10],
+    				returnToMenu: /*returnToMenu*/ ctx[0]
     			},
     			$$inline: true
     		});
@@ -1826,8 +1863,8 @@ var app = (function () {
     		c: function create() {
     			section = element("section");
     			create_component(gameover.$$.fragment);
-    			attr_dev(section, "class", "svelte-rbhhpr");
-    			add_location(section, file$5, 154, 8, 4244);
+    			attr_dev(section, "class", "svelte-1uczmef");
+    			add_location(section, file$5, 156, 8, 4275);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1836,7 +1873,8 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const gameover_changes = {};
-    			if (dirty & /*didWin*/ 512) gameover_changes.didWin = /*didWin*/ ctx[9];
+    			if (dirty & /*didWin*/ 1024) gameover_changes.didWin = /*didWin*/ ctx[10];
+    			if (dirty & /*returnToMenu*/ 1) gameover_changes.returnToMenu = /*returnToMenu*/ ctx[0];
     			gameover.$set(gameover_changes);
     		},
     		i: function intro(local) {
@@ -1868,14 +1906,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(154:0) {:else}",
+    		source: "(156:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (126:0) {#if !gameOver}
+    // (128:0) {#if !gameOver}
     function create_if_block$3(ctx) {
     	let section;
     	let img0;
@@ -1894,15 +1932,15 @@ var app = (function () {
 
     	counter = new Counter({
     			props: {
-    				numAttempts: /*numAttempts*/ ctx[8],
-    				questionNumber: /*questionNumber*/ ctx[1],
-    				questionsLeft: /*questionsLeft*/ ctx[0]
+    				numAttempts: /*numAttempts*/ ctx[9],
+    				questionNumber: /*questionNumber*/ ctx[2],
+    				questionsLeft: /*questionsLeft*/ ctx[1]
     			},
     			$$inline: true
     		});
 
-    	let if_block = /*correct*/ ctx[6] && create_if_block_1$2(ctx);
-    	let each_value = /*answers*/ ctx[4];
+    	let if_block = /*correct*/ ctx[7] && create_if_block_1$2(ctx);
+    	let each_value = /*answers*/ ctx[5];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -1932,20 +1970,20 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(img0, "class", "fish svelte-rbhhpr");
-    			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) attr_dev(img0, "src", img0_src_value);
+    			attr_dev(img0, "class", "fish svelte-1uczmef");
+    			if (img0.src !== (img0_src_value = /*fishURL*/ ctx[4])) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "A fish!");
-    			add_location(img0, file$5, 128, 8, 3440);
+    			add_location(img0, file$5, 130, 8, 3471);
     			if (img1.src !== (img1_src_value = "./assets/answerBox.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "Answer box");
-    			attr_dev(img1, "class", "svelte-rbhhpr");
-    			add_location(img1, file$5, 142, 12, 3873);
-    			attr_dev(div0, "class", "answers svelte-rbhhpr");
-    			add_location(div0, file$5, 143, 12, 3937);
-    			attr_dev(div1, "class", "answer-box svelte-rbhhpr");
-    			add_location(div1, file$5, 141, 8, 3836);
-    			attr_dev(section, "class", "svelte-rbhhpr");
-    			add_location(section, file$5, 127, 4, 3406);
+    			attr_dev(img1, "class", "svelte-1uczmef");
+    			add_location(img1, file$5, 144, 12, 3904);
+    			attr_dev(div0, "class", "answers svelte-1uczmef");
+    			add_location(div0, file$5, 145, 12, 3968);
+    			attr_dev(div1, "class", "answer-box svelte-1uczmef");
+    			add_location(div1, file$5, 143, 8, 3867);
+    			attr_dev(section, "class", "svelte-1uczmef");
+    			add_location(section, file$5, 129, 4, 3437);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -1967,21 +2005,21 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*fishURL*/ 8 && img0.src !== (img0_src_value = /*fishURL*/ ctx[3])) {
+    			if (!current || dirty & /*fishURL*/ 16 && img0.src !== (img0_src_value = /*fishURL*/ ctx[4])) {
     				attr_dev(img0, "src", img0_src_value);
     			}
 
     			const counter_changes = {};
-    			if (dirty & /*numAttempts*/ 256) counter_changes.numAttempts = /*numAttempts*/ ctx[8];
-    			if (dirty & /*questionNumber*/ 2) counter_changes.questionNumber = /*questionNumber*/ ctx[1];
-    			if (dirty & /*questionsLeft*/ 1) counter_changes.questionsLeft = /*questionsLeft*/ ctx[0];
+    			if (dirty & /*numAttempts*/ 512) counter_changes.numAttempts = /*numAttempts*/ ctx[9];
+    			if (dirty & /*questionNumber*/ 4) counter_changes.questionNumber = /*questionNumber*/ ctx[2];
+    			if (dirty & /*questionsLeft*/ 2) counter_changes.questionsLeft = /*questionsLeft*/ ctx[1];
     			counter.$set(counter_changes);
 
-    			if (/*correct*/ ctx[6]) {
+    			if (/*correct*/ ctx[7]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
-    					if (dirty & /*correct*/ 64) {
+    					if (dirty & /*correct*/ 128) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -2000,8 +2038,8 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (dirty & /*answers, handleAnswer, currFish, disableButtons*/ 1172) {
-    				each_value = /*answers*/ ctx[4];
+    			if (dirty & /*answers, handleAnswer, currFish, disableButtons*/ 2344) {
+    				each_value = /*answers*/ ctx[5];
     				validate_each_argument(each_value);
     				let i;
 
@@ -2070,14 +2108,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(126:0) {#if !gameOver}",
+    		source: "(128:0) {#if !gameOver}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (133:8) {#if correct}
+    // (135:8) {#if correct}
     function create_if_block_1$2(ctx) {
     	let div;
     	let correctmsg;
@@ -2089,7 +2127,7 @@ var app = (function () {
     	let dispose;
 
     	correctmsg = new CorrectMsg({
-    			props: { status: /*correct*/ ctx[6] },
+    			props: { status: /*correct*/ ctx[7] },
     			$$inline: true
     		});
 
@@ -2100,10 +2138,10 @@ var app = (function () {
     			t0 = space();
     			button = element("button");
     			button.textContent = "Next Fish!";
-    			attr_dev(button, "class", "svelte-rbhhpr");
-    			add_location(button, file$5, 135, 16, 3732);
-    			attr_dev(div, "class", "result svelte-rbhhpr");
-    			add_location(div, file$5, 133, 12, 3640);
+    			attr_dev(button, "class", "svelte-1uczmef");
+    			add_location(button, file$5, 137, 16, 3763);
+    			attr_dev(div, "class", "result svelte-1uczmef");
+    			add_location(div, file$5, 135, 12, 3671);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2113,13 +2151,13 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*nextQuestion*/ ctx[11], false, false, false);
+    				dispose = listen_dev(button, "click", /*nextQuestion*/ ctx[12], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, dirty) {
     			const correctmsg_changes = {};
-    			if (dirty & /*correct*/ 64) correctmsg_changes.status = /*correct*/ ctx[6];
+    			if (dirty & /*correct*/ 128) correctmsg_changes.status = /*correct*/ ctx[7];
     			correctmsg.$set(correctmsg_changes);
     		},
     		i: function intro(local) {
@@ -2151,24 +2189,24 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(133:8) {#if correct}",
+    		source: "(135:8) {#if correct}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:16) {#each answers as answer}
+    // (147:16) {#each answers as answer}
     function create_each_block(ctx) {
     	let gamebutton;
     	let current;
 
     	gamebutton = new GameButton({
     			props: {
-    				label: /*answer*/ ctx[21],
-    				onPress: /*handleAnswer*/ ctx[10],
-    				correctAns: /*currFish*/ ctx[2] === /*answer*/ ctx[21],
-    				disableButtons: /*disableButtons*/ ctx[7]
+    				label: /*answer*/ ctx[22],
+    				onPress: /*handleAnswer*/ ctx[11],
+    				correctAns: /*currFish*/ ctx[3] === /*answer*/ ctx[22],
+    				disableButtons: /*disableButtons*/ ctx[8]
     			},
     			$$inline: true
     		});
@@ -2183,9 +2221,9 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const gamebutton_changes = {};
-    			if (dirty & /*answers*/ 16) gamebutton_changes.label = /*answer*/ ctx[21];
-    			if (dirty & /*currFish, answers*/ 20) gamebutton_changes.correctAns = /*currFish*/ ctx[2] === /*answer*/ ctx[21];
-    			if (dirty & /*disableButtons*/ 128) gamebutton_changes.disableButtons = /*disableButtons*/ ctx[7];
+    			if (dirty & /*answers*/ 32) gamebutton_changes.label = /*answer*/ ctx[22];
+    			if (dirty & /*currFish, answers*/ 40) gamebutton_changes.correctAns = /*currFish*/ ctx[3] === /*answer*/ ctx[22];
+    			if (dirty & /*disableButtons*/ 256) gamebutton_changes.disableButtons = /*disableButtons*/ ctx[8];
     			gamebutton.$set(gamebutton_changes);
     		},
     		i: function intro(local) {
@@ -2206,7 +2244,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(145:16) {#each answers as answer}",
+    		source: "(147:16) {#each answers as answer}",
     		ctx
     	});
 
@@ -2222,7 +2260,7 @@ var app = (function () {
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (!/*gameOver*/ ctx[5]) return 0;
+    		if (!/*gameOver*/ ctx[6]) return 0;
     		return 1;
     	}
 
@@ -2294,7 +2332,11 @@ var app = (function () {
     }
 
     function instance$5($$self, $$props, $$invalidate) {
+    	let { returnToMenu } = $$props;
+
+    	//Initialize game state
     	let allFishNames = Object.keys(fishURLs);
+
     	let newFishNames = getFishSet(10);
     	var questionsLeft = newFishNames.length;
     	var questionNumber = 0;
@@ -2319,7 +2361,7 @@ var app = (function () {
     		let newFishIdx = getRandomIndex(newFishNames);
     		let newFish = newFishNames[newFishIdx];
     		newFishNames.splice(newFishIdx, 1);
-    		$$invalidate(1, questionNumber++, questionNumber);
+    		$$invalidate(2, questionNumber++, questionNumber);
     		return newFish;
     	}
 
@@ -2344,62 +2386,62 @@ var app = (function () {
     		e.preventDefault();
 
     		if (e.target.dataset.value === currFish) {
-    			$$invalidate(6, correct = "correct");
+    			$$invalidate(7, correct = "correct");
     			score += 1;
     		} else {
-    			$$invalidate(6, correct = "incorrect");
-    			$$invalidate(8, numAttempts -= 1);
+    			$$invalidate(7, correct = "incorrect");
+    			$$invalidate(9, numAttempts -= 1);
 
     			if (numAttempts === 0) {
     				youLose();
     			}
     		}
 
-    		$$invalidate(7, disableButtons = true);
+    		$$invalidate(8, disableButtons = true);
     	}
 
     	// Load the next question
     	function nextQuestion() {
-    		$$invalidate(6, correct = null);
-    		$$invalidate(7, disableButtons = false);
+    		$$invalidate(7, correct = null);
+    		$$invalidate(8, disableButtons = false);
 
     		if (newFishNames.length > 0) {
-    			$$invalidate(2, currFish = getNewFishName());
-    			$$invalidate(3, fishURL = fishURLs[currFish]);
-    			$$invalidate(4, answers = getAnswers(currFish));
+    			$$invalidate(3, currFish = getNewFishName());
+    			$$invalidate(4, fishURL = fishURLs[currFish]);
+    			$$invalidate(5, answers = getAnswers(currFish));
     		} else {
     			youWin();
     		}
     	}
 
     	function youWin() {
-    		$$invalidate(5, gameOver = true);
-    		$$invalidate(9, didWin = true);
+    		$$invalidate(6, gameOver = true);
+    		$$invalidate(10, didWin = true);
     	}
 
     	function youLose() {
-    		$$invalidate(5, gameOver = true);
-    		$$invalidate(9, didWin = false);
+    		$$invalidate(6, gameOver = true);
+    		$$invalidate(10, didWin = false);
     	}
 
     	//Reset Game State
     	function resetGame() {
     		allFishNames = Object.keys(fishURLs);
     		newFishNames = getFishSet(10);
-    		$$invalidate(0, questionsLeft = newFishNames.length);
-    		$$invalidate(1, questionNumber = 0);
-    		$$invalidate(2, currFish = getNewFishName());
-    		$$invalidate(3, fishURL = fishURLs[currFish]);
-    		$$invalidate(4, answers = getAnswers(currFish));
-    		$$invalidate(5, gameOver = false);
-    		$$invalidate(6, correct = null);
-    		$$invalidate(7, disableButtons = false);
+    		$$invalidate(1, questionsLeft = newFishNames.length);
+    		$$invalidate(2, questionNumber = 0);
+    		$$invalidate(3, currFish = getNewFishName());
+    		$$invalidate(4, fishURL = fishURLs[currFish]);
+    		$$invalidate(5, answers = getAnswers(currFish));
+    		$$invalidate(6, gameOver = false);
+    		$$invalidate(7, correct = null);
+    		$$invalidate(8, disableButtons = false);
     		score = 0;
-    		$$invalidate(8, numAttempts = 3);
-    		$$invalidate(9, didWin = false);
+    		$$invalidate(9, numAttempts = 3);
+    		$$invalidate(10, didWin = false);
     	}
 
-    	const writable_props = [];
+    	const writable_props = ["returnToMenu"];
 
     	Object_1.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Game> was created with unknown prop '${key}'`);
@@ -2408,7 +2450,12 @@ var app = (function () {
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("Game", $$slots, []);
 
+    	$$self.$$set = $$props => {
+    		if ("returnToMenu" in $$props) $$invalidate(0, returnToMenu = $$props.returnToMenu);
+    	};
+
     	$$self.$capture_state = () => ({
+    		returnToMenu,
     		getRandomIndex,
     		shuffleArray,
     		sample,
@@ -2444,19 +2491,20 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
+    		if ("returnToMenu" in $$props) $$invalidate(0, returnToMenu = $$props.returnToMenu);
     		if ("allFishNames" in $$props) allFishNames = $$props.allFishNames;
     		if ("newFishNames" in $$props) newFishNames = $$props.newFishNames;
-    		if ("questionsLeft" in $$props) $$invalidate(0, questionsLeft = $$props.questionsLeft);
-    		if ("questionNumber" in $$props) $$invalidate(1, questionNumber = $$props.questionNumber);
-    		if ("currFish" in $$props) $$invalidate(2, currFish = $$props.currFish);
-    		if ("fishURL" in $$props) $$invalidate(3, fishURL = $$props.fishURL);
-    		if ("answers" in $$props) $$invalidate(4, answers = $$props.answers);
-    		if ("gameOver" in $$props) $$invalidate(5, gameOver = $$props.gameOver);
-    		if ("correct" in $$props) $$invalidate(6, correct = $$props.correct);
-    		if ("disableButtons" in $$props) $$invalidate(7, disableButtons = $$props.disableButtons);
+    		if ("questionsLeft" in $$props) $$invalidate(1, questionsLeft = $$props.questionsLeft);
+    		if ("questionNumber" in $$props) $$invalidate(2, questionNumber = $$props.questionNumber);
+    		if ("currFish" in $$props) $$invalidate(3, currFish = $$props.currFish);
+    		if ("fishURL" in $$props) $$invalidate(4, fishURL = $$props.fishURL);
+    		if ("answers" in $$props) $$invalidate(5, answers = $$props.answers);
+    		if ("gameOver" in $$props) $$invalidate(6, gameOver = $$props.gameOver);
+    		if ("correct" in $$props) $$invalidate(7, correct = $$props.correct);
+    		if ("disableButtons" in $$props) $$invalidate(8, disableButtons = $$props.disableButtons);
     		if ("score" in $$props) score = $$props.score;
-    		if ("numAttempts" in $$props) $$invalidate(8, numAttempts = $$props.numAttempts);
-    		if ("didWin" in $$props) $$invalidate(9, didWin = $$props.didWin);
+    		if ("numAttempts" in $$props) $$invalidate(9, numAttempts = $$props.numAttempts);
+    		if ("didWin" in $$props) $$invalidate(10, didWin = $$props.didWin);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2464,6 +2512,7 @@ var app = (function () {
     	}
 
     	return [
+    		returnToMenu,
     		questionsLeft,
     		questionNumber,
     		currFish,
@@ -2483,7 +2532,7 @@ var app = (function () {
     class Game extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {});
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { returnToMenu: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -2491,6 +2540,21 @@ var app = (function () {
     			options,
     			id: create_fragment$5.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*returnToMenu*/ ctx[0] === undefined && !("returnToMenu" in props)) {
+    			console.warn("<Game> was created without expected prop 'returnToMenu'");
+    		}
+    	}
+
+    	get returnToMenu() {
+    		throw new Error("<Game>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set returnToMenu(value) {
+    		throw new Error("<Game>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -2630,7 +2694,6 @@ var app = (function () {
     }
 
     /* src/components/Menu.svelte generated by Svelte v3.24.1 */
-
     const file$7 = "src/components/Menu.svelte";
 
     function create_fragment$7(ctx) {
@@ -2646,6 +2709,7 @@ var app = (function () {
     	let a0;
     	let t8;
     	let a1;
+    	let section_intro;
     	let mounted;
     	let dispose;
 
@@ -2669,22 +2733,22 @@ var app = (function () {
     			a1 = element("a");
     			a1.textContent = "View Readme on Github";
     			attr_dev(h1, "class", "svelte-kfvws2");
-    			add_location(h1, file$7, 6, 4, 61);
-    			add_location(br, file$7, 10, 4, 116);
+    			add_location(h1, file$7, 9, 4, 153);
+    			add_location(br, file$7, 13, 4, 208);
     			attr_dev(button0, "class", "menu-button svelte-kfvws2");
-    			add_location(button0, file$7, 12, 4, 126);
+    			add_location(button0, file$7, 15, 4, 218);
     			attr_dev(button1, "class", "menu-button svelte-kfvws2");
-    			add_location(button1, file$7, 16, 4, 215);
+    			add_location(button1, file$7, 19, 4, 307);
     			attr_dev(a0, "class", "menu-button svelte-kfvws2");
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "href", "https://ajay-rajamani.me");
-    			add_location(a0, file$7, 20, 4, 289);
+    			add_location(a0, file$7, 23, 4, 409);
     			attr_dev(a1, "class", "menu-button svelte-kfvws2");
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "href", "https://github.com/stickmanbob/svelteQuizGame#readme");
-    			add_location(a1, file$7, 24, 4, 401);
+    			add_location(a1, file$7, 27, 4, 521);
     			attr_dev(section, "class", "svelte-kfvws2");
-    			add_location(section, file$7, 4, 0, 46);
+    			add_location(section, file$7, 7, 0, 130);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2704,16 +2768,28 @@ var app = (function () {
     			append_dev(section, a1);
 
     			if (!mounted) {
-    				dispose = listen_dev(
-    					button0,
-    					"click",
-    					function () {
-    						if (is_function(/*startGame*/ ctx[0])) /*startGame*/ ctx[0].apply(this, arguments);
-    					},
-    					false,
-    					false,
-    					false
-    				);
+    				dispose = [
+    					listen_dev(
+    						button0,
+    						"click",
+    						function () {
+    							if (is_function(/*startGame*/ ctx[0])) /*startGame*/ ctx[0].apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					listen_dev(
+    						button1,
+    						"click",
+    						function () {
+    							if (is_function(/*viewInstructions*/ ctx[1])) /*viewInstructions*/ ctx[1].apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					)
+    				];
 
     				mounted = true;
     			}
@@ -2721,12 +2797,19 @@ var app = (function () {
     		p: function update(new_ctx, [dirty]) {
     			ctx = new_ctx;
     		},
-    		i: noop,
+    		i: function intro(local) {
+    			if (!section_intro) {
+    				add_render_callback(() => {
+    					section_intro = create_in_transition(section, fade, {});
+    					section_intro.start();
+    				});
+    			}
+    		},
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -2743,7 +2826,8 @@ var app = (function () {
 
     function instance$7($$self, $$props, $$invalidate) {
     	let { startGame } = $$props;
-    	const writable_props = ["startGame"];
+    	let { viewInstructions } = $$props;
+    	const writable_props = ["startGame", "viewInstructions"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Menu> was created with unknown prop '${key}'`);
@@ -2754,25 +2838,27 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("startGame" in $$props) $$invalidate(0, startGame = $$props.startGame);
+    		if ("viewInstructions" in $$props) $$invalidate(1, viewInstructions = $$props.viewInstructions);
     	};
 
-    	$$self.$capture_state = () => ({ startGame });
+    	$$self.$capture_state = () => ({ startGame, viewInstructions, fade });
 
     	$$self.$inject_state = $$props => {
     		if ("startGame" in $$props) $$invalidate(0, startGame = $$props.startGame);
+    		if ("viewInstructions" in $$props) $$invalidate(1, viewInstructions = $$props.viewInstructions);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [startGame];
+    	return [startGame, viewInstructions];
     }
 
     class Menu extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, { startGame: 0 });
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, { startGame: 0, viewInstructions: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -2787,6 +2873,10 @@ var app = (function () {
     		if (/*startGame*/ ctx[0] === undefined && !("startGame" in props)) {
     			console.warn("<Menu> was created without expected prop 'startGame'");
     		}
+
+    		if (/*viewInstructions*/ ctx[1] === undefined && !("viewInstructions" in props)) {
+    			console.warn("<Menu> was created without expected prop 'viewInstructions'");
+    		}
     	}
 
     	get startGame() {
@@ -2796,16 +2886,254 @@ var app = (function () {
     	set startGame(value) {
     		throw new Error("<Menu>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get viewInstructions() {
+    		throw new Error("<Menu>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set viewInstructions(value) {
+    		throw new Error("<Menu>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Instructions.svelte generated by Svelte v3.24.1 */
+    const file$8 = "src/components/Instructions.svelte";
+
+    function create_fragment$8(ctx) {
+    	let section;
+    	let h1;
+    	let t1;
+    	let p;
+    	let t3;
+    	let ul;
+    	let li0;
+    	let t5;
+    	let li1;
+    	let t7;
+    	let li2;
+    	let t9;
+    	let button;
+    	let section_intro;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			h1 = element("h1");
+    			h1.textContent = "Instructions";
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Ahoy Matey! Welcome to Name That Fish, the official time wasting quiz game of Boy Scout Troop 476! Here's how to play:";
+    			t3 = space();
+    			ul = element("ul");
+    			li0 = element("li");
+    			li0.textContent = "Ye'll be presented with a picture of a fish and a set of four names to choose from. Use yer seafarin' knowledge to click the correct one!";
+    			t5 = space();
+    			li1 = element("li");
+    			li1.textContent = "Each time you answer, we'll let ye know if ye called it right (\"Good Job Matey!\") or if ye bungled it (\"Walk the Plank!\")";
+    			t7 = space();
+    			li2 = element("li");
+    			li2.textContent = "Ye get three tries to bungle it up before ye fall off the plank! Make it to the end of the quiz without failin' and ye win!";
+    			t9 = space();
+    			button = element("button");
+    			button.textContent = "Back to the Bridge!";
+    			attr_dev(h1, "class", "svelte-7sae5j");
+    			add_location(h1, file$8, 6, 4, 116);
+    			attr_dev(p, "class", "svelte-7sae5j");
+    			add_location(p, file$8, 8, 4, 143);
+    			attr_dev(li0, "class", "svelte-7sae5j");
+    			add_location(li0, file$8, 10, 8, 287);
+    			attr_dev(li1, "class", "svelte-7sae5j");
+    			add_location(li1, file$8, 11, 8, 442);
+    			attr_dev(li2, "class", "svelte-7sae5j");
+    			add_location(li2, file$8, 12, 8, 581);
+    			attr_dev(ul, "class", "svelte-7sae5j");
+    			add_location(ul, file$8, 9, 4, 274);
+    			add_location(button, file$8, 15, 4, 729);
+    			attr_dev(section, "class", "svelte-7sae5j");
+    			add_location(section, file$8, 5, 0, 94);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			append_dev(section, h1);
+    			append_dev(section, t1);
+    			append_dev(section, p);
+    			append_dev(section, t3);
+    			append_dev(section, ul);
+    			append_dev(ul, li0);
+    			append_dev(ul, t5);
+    			append_dev(ul, li1);
+    			append_dev(ul, t7);
+    			append_dev(ul, li2);
+    			append_dev(section, t9);
+    			append_dev(section, button);
+
+    			if (!mounted) {
+    				dispose = listen_dev(
+    					button,
+    					"click",
+    					function () {
+    						if (is_function(/*returnToMenu*/ ctx[0])) /*returnToMenu*/ ctx[0].apply(this, arguments);
+    					},
+    					false,
+    					false,
+    					false
+    				);
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    		},
+    		i: function intro(local) {
+    			if (!section_intro) {
+    				add_render_callback(() => {
+    					section_intro = create_in_transition(section, fade, {});
+    					section_intro.start();
+    				});
+    			}
+    		},
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(section);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$8.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	let { returnToMenu } = $$props;
+    	const writable_props = ["returnToMenu"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Instructions> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Instructions", $$slots, []);
+
+    	$$self.$$set = $$props => {
+    		if ("returnToMenu" in $$props) $$invalidate(0, returnToMenu = $$props.returnToMenu);
+    	};
+
+    	$$self.$capture_state = () => ({ returnToMenu, fade });
+
+    	$$self.$inject_state = $$props => {
+    		if ("returnToMenu" in $$props) $$invalidate(0, returnToMenu = $$props.returnToMenu);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [returnToMenu];
+    }
+
+    class Instructions extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, { returnToMenu: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Instructions",
+    			options,
+    			id: create_fragment$8.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*returnToMenu*/ ctx[0] === undefined && !("returnToMenu" in props)) {
+    			console.warn("<Instructions> was created without expected prop 'returnToMenu'");
+    		}
+    	}
+
+    	get returnToMenu() {
+    		throw new Error("<Instructions>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set returnToMenu(value) {
+    		throw new Error("<Instructions>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* src/App.svelte generated by Svelte v3.24.1 */
-    const file$8 = "src/App.svelte";
+    const file$9 = "src/App.svelte";
 
-    // (23:36) 
+    // (32:44) 
+    function create_if_block_2(ctx) {
+    	let instructions;
+    	let current;
+
+    	instructions = new Instructions({
+    			props: {
+    				returnToMenu: /*navigate*/ ctx[1]("menu")
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(instructions.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(instructions, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(instructions.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(instructions.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(instructions, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(32:44) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (30:36) 
     function create_if_block_1$3(ctx) {
     	let game;
     	let current;
-    	game = new Game({ $$inline: true });
+
+    	game = new Game({
+    			props: {
+    				returnToMenu: /*navigate*/ ctx[1]("menu")
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -2834,20 +3162,23 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(23:36) ",
+    		source: "(30:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (21:1) {#if mainComponent === "menu"}
+    // (26:1) {#if mainComponent === "menu"}
     function create_if_block$4(ctx) {
     	let menu;
     	let current;
 
     	menu = new Menu({
-    			props: { startGame: /*startGame*/ ctx[1] },
+    			props: {
+    				startGame: /*navigate*/ ctx[1]("game"),
+    				viewInstructions: /*navigate*/ ctx[1]("instructions")
+    			},
     			$$inline: true
     		});
 
@@ -2878,14 +3209,14 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(21:1) {#if mainComponent === \\\"menu\\\"}",
+    		source: "(26:1) {#if mainComponent === \\\"menu\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$8(ctx) {
+    function create_fragment$9(ctx) {
     	let main;
     	let header;
     	let t0;
@@ -2895,12 +3226,13 @@ var app = (function () {
     	let footer;
     	let current;
     	header = new Header({ $$inline: true });
-    	const if_block_creators = [create_if_block$4, create_if_block_1$3];
+    	const if_block_creators = [create_if_block$4, create_if_block_1$3, create_if_block_2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
     		if (/*mainComponent*/ ctx[0] === "menu") return 0;
     		if (/*mainComponent*/ ctx[0] === "game") return 1;
+    		if (/*mainComponent*/ ctx[0] === "instructions") return 2;
     		return -1;
     	}
 
@@ -2919,7 +3251,7 @@ var app = (function () {
     			t1 = space();
     			create_component(footer.$$.fragment);
     			attr_dev(main, "class", "svelte-frvpbq");
-    			add_location(main, file$8, 17, 0, 332);
+    			add_location(main, file$9, 22, 0, 569);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2998,7 +3330,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$8.name,
+    		id: create_fragment$9.name,
     		type: "component",
     		source: "",
     		ctx
@@ -3007,12 +3339,16 @@ var app = (function () {
     	return block;
     }
 
-    function instance$8($$self, $$props, $$invalidate) {
+    function instance$9($$self, $$props, $$invalidate) {
     	var mainComponent = "menu";
 
-    	function startGame(e) {
-    		e.preventDefault();
-    		$$invalidate(0, mainComponent = "game");
+    	//Returns a callback function that changes the value of mainComponent
+    	//Used to allow frontend routing via Svelte's conditional rendering
+    	function navigate(component) {
+    		return e => {
+    			e.preventDefault();
+    			$$invalidate(0, mainComponent = component);
+    		};
     	}
 
     	const writable_props = [];
@@ -3029,8 +3365,9 @@ var app = (function () {
     		Game,
     		Footer,
     		Menu,
+    		Instructions,
     		mainComponent,
-    		startGame
+    		navigate
     	});
 
     	$$self.$inject_state = $$props => {
@@ -3041,19 +3378,19 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [mainComponent, startGame];
+    	return [mainComponent, navigate];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {});
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$8.name
+    			id: create_fragment$9.name
     		});
     	}
     }

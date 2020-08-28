@@ -1,6 +1,7 @@
 <script>
     export let didWin;
     export let reset; 
+    export let returnToMenu; 
     
 </script>
 
@@ -13,6 +14,7 @@
         <img src="./assets/lose.gif" alt="">
     {/if}
     <button on:click={reset}>Play Again!</button>
+    <button on:click={returnToMenu}>Back to the Bridge!</button>
 </div>
 
 <style>
@@ -24,7 +26,8 @@
     border: 2px solid black;
     border-radius: 6px;
     padding: 10px 20px;
-    background-color: #d4d2ab;
+    /* background-color: #d4d2ab; */
+    background-image: url("../assets/header_background.jpg");
 
    }
 
@@ -75,7 +78,7 @@
     @media (max-width: 450px){
 
         div{
-            padding: 5px;
+            padding: 10px 5px;
             width: 90%;
             box-sizing: border-box;
         }
@@ -85,7 +88,12 @@
         }
 
         h1{
-            font-size:28px;
+            font-size:20px;
+        }
+
+        button{
+            font-size: 16px;
+            padding: 8px 20px;
         }
     }
 

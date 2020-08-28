@@ -4,13 +4,18 @@
 	import Header from "./components/Header.svelte";
 	import Game from "./components/Game.svelte";
 	import Footer from "./components/Footer.svelte";
-import Menu from "./components/Menu.svelte";
+	import Menu from "./components/Menu.svelte";
+	import Instructions from "./components/Instructions.svelte";
 
 	var mainComponent = "menu"
 
-	function startGame(e){
-		e.preventDefault(); 
-		mainComponent = "game"
+	//Returns a callback function that changes the value of mainComponent
+	//Used to allow frontend routing via Svelte's conditional rendering
+	function navigate(component){
+		return (e) => {
+			e.preventDefault();
+			mainComponent = component;
+		}
 	}
 
 </script>
@@ -19,9 +24,13 @@ import Menu from "./components/Menu.svelte";
 	<Header/>
 
 	{#if mainComponent === "menu"}
-		<Menu startGame={startGame}/>
+		<Menu startGame={navigate("game")}
+			viewInstructions={navigate("instructions")}
+		/>
 	{:else if mainComponent === "game"}
-		<Game/>
+		<Game returnToMenu={navigate("menu")}/>
+	{:else if mainComponent === "instructions"}
+		<Instructions returnToMenu={navigate("menu")}/>
 	{/if}
 	
 
