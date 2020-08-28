@@ -9,7 +9,7 @@
         <p>Created by Ajay Rajamani for the Mintbean Svelte.js hackathon</p>
 
         <ul>
-            <li><a target="_blank" href="https://github.com/stickmanbob/svelteQuizGame#readme">Code</a></li>
+            <li><a target="_blank" href="https://github.com/stickmanbob/svelteQuizGame">Code</a></li>
             <li><a target="_blank" href="https://ajay-rajamani.me">About Me</a> </li>
         </ul>
 
@@ -23,7 +23,10 @@
 
     footer{
         background-image: url("../assets/header_background.jpg");
+        position: absolute;
+        bottom: 0px;
         margin: 0px auto;
+        margin-top: 20px;
         width: 100%;
         /* display: flex;
 
@@ -39,6 +42,8 @@
 
     p{
         font-size: 12px;
+        text-align: center;
+        display: inline-block;
     }
 
     ul{

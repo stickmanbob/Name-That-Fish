@@ -3,13 +3,27 @@
 	//Components
 	import Header from "./components/Header.svelte";
 	import Game from "./components/Game.svelte";
-import Footer from "./components/Footer.svelte";
+	import Footer from "./components/Footer.svelte";
+import Menu from "./components/Menu.svelte";
+
+	var mainComponent = "menu"
+
+	function startGame(e){
+		e.preventDefault(); 
+		mainComponent = "game"
+	}
+
 </script>
 
 <main>
 	<Header/>
 
-	<Game/>
+	{#if mainComponent === "menu"}
+		<Menu startGame={startGame}/>
+	{:else if mainComponent === "game"}
+		<Game/>
+	{/if}
+	
 
 	<Footer/>
 </main>
@@ -23,7 +37,8 @@ import Footer from "./components/Footer.svelte";
 		align-items: center;
 		background-image: url("../assets/background.jpg");
 		background-size: cover;
-		min-height: fit-content;
+		min-height: 100vh;
+		position: relative;
 	}
 
 
