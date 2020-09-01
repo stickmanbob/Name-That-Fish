@@ -3033,20 +3033,20 @@ var app = (function () {
     			t9 = space();
     			button = element("button");
     			button.textContent = "Back to the Bridge!";
-    			attr_dev(h1, "class", "svelte-7sae5j");
+    			attr_dev(h1, "class", "svelte-yj5wbd");
     			add_location(h1, file$8, 6, 4, 116);
-    			attr_dev(p, "class", "svelte-7sae5j");
+    			attr_dev(p, "class", "svelte-yj5wbd");
     			add_location(p, file$8, 8, 4, 143);
-    			attr_dev(li0, "class", "svelte-7sae5j");
+    			attr_dev(li0, "class", "svelte-yj5wbd");
     			add_location(li0, file$8, 10, 8, 287);
-    			attr_dev(li1, "class", "svelte-7sae5j");
+    			attr_dev(li1, "class", "svelte-yj5wbd");
     			add_location(li1, file$8, 11, 8, 442);
-    			attr_dev(li2, "class", "svelte-7sae5j");
+    			attr_dev(li2, "class", "svelte-yj5wbd");
     			add_location(li2, file$8, 12, 8, 581);
-    			attr_dev(ul, "class", "svelte-7sae5j");
+    			attr_dev(ul, "class", "svelte-yj5wbd");
     			add_location(ul, file$8, 9, 4, 274);
     			add_location(button, file$8, 15, 4, 729);
-    			attr_dev(section, "class", "svelte-7sae5j");
+    			attr_dev(section, "class", "svelte-yj5wbd");
     			add_location(section, file$8, 5, 0, 94);
     		},
     		l: function claim(nodes) {
@@ -3345,7 +3345,7 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(main, "class", "svelte-frvpbq");
+    			attr_dev(main, "class", "svelte-8ln5uc");
     			add_location(main, file$9, 22, 0, 569);
     		},
     		l: function claim(nodes) {

@@ -57,4 +57,10 @@
 		}
 	}
 
+	@media (max-width: 450px){
+		main{
+			padding-bottom: 89px;
+		}
+	}
+
 </style>

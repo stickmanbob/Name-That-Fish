@@ -32,7 +32,8 @@
 
         background-image: url("../assets/header_background.jpg");
 
-        width: 600px;
+        max-width: 500px;
+
 
     }
 
