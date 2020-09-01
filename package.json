@@ -1,8 +1,8 @@
 {
-  "name": "svelteQuizGame",
+  "name": "Name That Fish!",
   "description": "This project was generated from the Mintbean svelte-gh-pages template using the mintbean-cli tool.",
   "version": "0.1.0",
-  "homepage": "https://stickmanbob.github.io/svelteQuizGame/",
+  "homepage": "https://stickmanbob.github.io/Name-That-Fish/",
   "private": true,
   "scripts": {
     "build": "rollup -c",
@@ -13,7 +13,7 @@
   },
   "mintbean": {
     "template": "svelte-gh-pages",
-    "homepage": "https://stickmanbob.github.io/svelteQuizGame/",
+    "homepage": "https://stickmanbob.github.io/Name-That-Fish/",
     "scripts": {
       "deploy": "npm run deploy",
       "develop": "npm run dev"
